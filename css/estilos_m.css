@@ -1,0 +1,1152 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Outfit:wght@100;400;600;700&display=swap');
+
+
+
+/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+   body{
+    background: black;
+    width: 100%;
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight:400;
+    margin: 0;
+    color: #474747 ;
+   }
+
+   html {scroll-snap-type: y mandatory;}
+  
+  section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  section:nth-of-type(even) {
+    color: white;
+    background: black;
+  }
+  
+  section:nth-of-type(odd) {
+    color: black;
+    background: white;
+  }
+  
+  .scroll{display:flex; flex-flow: column; justify-content:center; align-items: center; width: 100%; position: absolute; bottom: 2rem;}
+  .scroll-down {
+    margin-top:15px;
+    position:relative;
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    z-index: 100;
+    text-decoration: none;
+    text-shadow: 0;
+    width: 13px;
+    height: 13px;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    -webkit-transform: translate(-50%, 0%) rotate(45deg);
+    -moz-transform: translate(-50%, 0%) rotate(45deg);
+    transform: translate(-50%, 0%) rotate(45deg);
+    -webkit-animation: fade_move_down 4s ease-in-out infinite;
+    -moz-animation:    fade_move_down 4s ease-in-out infinite;
+    animation:         fade_move_down 4s ease-in-out infinite;
+  }
+  
+  
+  /*animated scroll arrow animation*/
+  @-webkit-keyframes fade_move_down {
+    0%   { -webkit-transform:translate(0,-10px) rotate(45deg); opacity: 0;  }
+    50%  { opacity: 1;  }
+    100% { -webkit-transform:translate(0,10px) rotate(45deg); opacity: 0; }
+  }
+  @-moz-keyframes fade_move_down {
+    0%   { -moz-transform:translate(0,-10px) rotate(45deg); opacity: 0;  }
+    50%  { opacity: 1;  }
+    100% { -moz-transform:translate(0,10px) rotate(45deg); opacity: 0; }
+  }
+  @keyframes fade_move_down {
+    0%   { transform:translate(0,-10px) rotate(45deg); opacity: 0;  }
+    50%  { opacity: 1;  }
+    100% { transform:translate(0,10px) rotate(45deg); opacity: 0; }
+  }
+
+  .ir-arriba {
+    display: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #FF13A1;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    position: fixed;
+    bottom: 20px;
+    right: 4%;
+    z-index: 80;
+    text-align: center;
+    transition: all 2s ease-in-out; }
+    .ir-arriba:hover {
+      background: black;
+      transition: all 2s ease-in-out; }
+    .ir-arriba svg {
+      width: 40%;
+      height: 40%;
+      top: 11px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto; }
+
+
+
+
+
+
+   .txt-welcome{font-family: 'Bebas Neue', sans-serif; color: white;}
+   .txt_w{color:white;}
+   .open{display: block;}
+   .cerrar{width: 20px; height: 20px; position: absolute; right:50px; top: -30px; background: black; border-radius: 10px; padding: 10px;}
+   .cerrar img{ margin-top: -10px;}
+   .cerrar:hover img{cursor: pointer;  transform: scale(1.1);}
+   .oculto{display: none;}
+   .txt-bold{font-weight: 600; color: black;}
+   
+   header {width: 100%; position: fixed; display: inline-flex;justify-content: flex-start;align-content: center;height: 80px;z-index: 20;}
+
+   #logo{background: black;height: 80px;border-radius: 0px 0px 30px 0px;display: inline-flex;justify-content: space-around;align-items: center;}
+   #logo img{ width: 35%;}
+   .menu{height: 100%;}
+   .menu ul{display: inline-flex; justify-content: flex-start; align-items: center; width: 100%; height: 100%; margin: 0; padding: 0;}   
+   .menu ul li{height: 100%; display: flex; justify-content: center;align-items: center;}
+   .menu ul li a{ text-decoration: none;font-family: 'Bebas Neue', sans-serif; letter-spacing:3px; color: #131313;transition: color 1s ease-in-out;}
+   .menu ul li a:hover{color: #FF8103;}
+
+
+#principal{ background: url(../img/bg_webKD.png) no-repeat; width: 100%; height: 100vh; background-size: cover;  position: relative;}
+#trailer {display: flex; justify-content: center;}
+#trailer_button{ width: 100%;display: flex; justify-content:center; filter: drop-shadow(2px 3px 8px rgba(0,0,0,.3));}
+#trailer_button:hover{cursor: pointer; filter: drop-shadow(2px 3px 8px rgba(255,19,161,.5));}
+.sound-wave {display: flex;align-items: center;justify-content: center;}
+.bar {animation-name: wave-lg;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+  background: white;
+  margin: 0 1.5px;
+  height: 10px;
+  width: 1px;
+}
+.bar:nth-child(-n+7), body .bar:nth-last-child(-n+7) {
+  animation-name: wave-md;
+}
+.bar:nth-child(-n+3), body .bar:nth-last-child(-n+3) {
+  animation-name: wave-sm;
+}
+
+@keyframes wave-sm {
+  0% {
+    opacity: 0.35;
+    height: 10px;
+  }
+  100% {
+    opacity: 1;
+    height: 25px;
+  }
+}
+@keyframes wave-md {
+  0% {
+    opacity: 0.35;
+    height: 15px;
+  }
+  100% {
+    opacity: 1;
+    height: 50px;
+  }
+}
+@keyframes wave-lg {
+  0% {
+    opacity: 0.35;
+    height: 15px;
+  }
+  100% {
+    opacity: 1;
+    height: 70px;
+  }
+}
+
+
+#identidad{display: flex; justify-content:center; align-items: center;}
+.content{display: flex;flex-flow: column;}
+.subtitle{ color: white; text-transform: uppercase;font-size: 20px;letter-spacing: 20px; font-family: 'Bebas Neue', sans-serif;}
+#logotype{width: 100%;}
+.content .txt_w {text-align: center; padding: 10px 0;}
+#stream{ padding:10px 0; background: transparent; width: 100%; display: inline-flex; justify-content: center; align-items: center;}
+#stream a{margin: 0 20px;}
+#stream a:hover{filter: drop-shadow(2px 1px 4px rgba(255,255,255,.5));}
+#stream img{ width: 100%;}
+
+
+
+
+/**Reproductor trailer*/
+.reproductor-container{
+  width: 100%;
+  position:fixed;
+  background:black;
+  height: 180px;
+  bottom: 0;
+  z-index: 2;
+}
+.reproductor-trailer {
+  width: 100%;
+  position: relative;
+  display: inline-flex;
+  justify-content: flex-start;
+}
+.reproductor-trailer .circle {
+  width:25%;
+  right: 0;
+  position:relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reproductor-trailer .circle img {
+  max-width: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  position: absolute;
+  top: 10px;
+  border: 6px solid rgb(15,15,15);
+}
+.reproductor-trailer .circle .active {
+  text-transform: uppercase;
+  animation-name: example;
+  animation: record 3s linear 0s infinite forwards;
+}
+@keyframes record {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+.reproductor-trailer .circle .circ {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 47%;
+  top: 44%;
+  background-color: rgb(75, 75, 75);
+  border: 3px solid rgb(15,15,15);
+  border-radius: 50%;
+  z-index: 1;
+}
+.reproductor-trailer .player-trailer {
+  width:50%;
+  position: relative;
+  top: 0;
+  margin-left: 15px;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 2px;
+  color: white;
+}
+.reproductor-trailer .player-trailer .active {
+  top: -100px;
+}
+.reproductor-trailer .player-trailer .time {
+  font-size: 16px;
+  margin: 10px 0px;
+  height: 6px;
+  color: white;
+}
+.reproductor-trailer .player-trailer .progress-bar {
+  background-color: #222;
+  height: 3px;
+  border-radius: 20px;
+}
+.reproductor-trailer .player-trailer .progress-bar .fillBar {
+  background-color: #FF8103;
+  width: 0;
+  height: 3px;
+  border-radius: 20px;
+}
+.reproductor-trailer .player-trailer .trailer-name {
+  font-weight: bold;
+  font-size: 28px;
+  margin: 25px 0;
+
+}
+.reproductor-trailer .player-trailer .podcaster-name {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.reproductor-trailer .player-control {
+  width:20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:180px;
+}
+.reproductor-trailer .player-control #play {
+  border-radius: 50%;
+}
+.reproductor-trailer .player-control i {
+  font-size: 110px;
+  cursor: pointer;
+  text-align: center;
+  margin-left: 60px;
+}
+.reproductor-trailer .player-control i:before {
+  color: white;
+  padding: 5px;
+}
+.reproductor-trailer .player-control i:hover:before {
+  color: #FF8103;
+  opacity: 0.7;
+}
+
+
+
+.subttwo{ text-transform: uppercase;font-family: 'Bebas Neue', sans-serif;}
+
+.sliced{
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  z-index: 5;
+  position: relative;
+}
+.titlePink {
+  position: relative;
+  color: white;
+  padding: 20px 50px;
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
+}
+ 
+.titlePink:before {
+  background: #FF13A1;
+  color: #000;
+  content: 'DISFRUTA';
+  overflow: hidden;
+  position: absolute;  
+  top: 0;  
+  left: 0;
+  padding: 20px 50px;
+    -webkit-clip-path: polygon(0% 0% , 30% 0%, 30% 100%, 0% 100%);  
+  clip-path: polygon(0% 0% , 30% 0%, 30% 100%, 0% 100%);
+  animation: slide 4s 1s linear infinite; 
+} 
+
+.titleOrange {
+  position: relative;
+  color: black;
+  padding: 20px 50px;
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+}
+ 
+.titleOrange:before {
+  background: #FF8103;
+  color: #fff;
+  content: 'ESCUCHANDO';
+  overflow: hidden;
+  position: absolute;  
+  top: 0;  
+  left: 0;
+  padding: 20px 50px;
+    -webkit-clip-path: polygon(0% 0% , 30% 0%, 30% 100%, 0% 100%);  
+  clip-path: polygon(0% 0% , 30% 0%, 30% 100%, 0% 100%);
+  animation: slide 4s 1s linear infinite; 
+} 
+           
+@keyframes slide {      
+  50% {     
+    -webkit-clip-path: polygon(70% 0%, 100% 0%, 100% 100%, 70% 100%); 
+  } 
+}  
+
+#episodios{
+  width: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.content_80{
+  width: 90%;
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+}
+
+.txt_black{
+  color: #000;
+}
+
+
+#episodios .subttwo{
+  margin-bottom: 50px;
+  font-size: 24px;
+}
+.divisor{ height:3px;background:#FF8103; position: absolute; right: 0; border-radius: 20px 0 0 20px ;}
+
+
+/*Episodes playlist*/
+.episode-player{
+  width: 100%;
+  height: 460px;
+  position: relative;
+}
+
+.episode{
+  background: black;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  z-index: 1;
+}
+.episode .episode-numb{
+  width: 100px;
+  z-index: 5;
+  height: 45px;
+  background: #FF13A1;
+  color:white;
+  border-radius: 10px 0px 30px 0px;
+  position: absolute;
+  top: -3rem;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 30px;
+  text-align: center;
+}
+
+.episode .episode__cover{
+  background-color: rgb(10,10,10);
+  border-radius: 50%;
+  border: 0.35em solid rgb(15,15,15);
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+}
+
+.episode .episode__cover .etiqueta{
+  width: 2em;
+  height: 2em;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background-color: rgb(85, 85, 85);
+  border: 0.5em solid rgb(35, 35, 35);
+}
+.episode .episode__cover .etiqueta::after{
+  content: "";
+  width: 0.3em;
+  height: 0.3em;
+  position: absolute;
+  top: 48%;
+  left: 43%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background-color: rgb(0, 0, 0);
+}
+.episode .episode__cover img{
+  width: 100%;
+  animation-name: discoTocando;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes discoTocando {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+
+.episode .cover__listening{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+  height: 100%;
+  z-index: 0;
+}
+.episode .cover__listening img{width:100%; display: block; margin: -45px auto;}
+
+
+.episode-info{
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items:flex-start;
+}
+
+.episode-info .emision{
+  display:inline-flex;
+  width: 100%;
+  justify-content:flex-start;
+  align-items: center;
+  margin: 20px 0;
+}
+.episode-info .emision-date {
+  width: 25%;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  font-family: 'Bebas Neue', sans-serif !important;
+  letter-spacing: 1px;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.episode-info .episode-duration {
+  width: 25%;
+  color: #000;
+  margin: 0;
+  padding: 0;
+  font-family: 'Bebas Neue', sans-serif !important;
+  letter-spacing: 1px;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.episode-info .descripcion{width: 100%;}
+.episode-info .episode_name{ color: black;font-weight: 400; padding: 0;}
+.episode-info .episode-description{ color: black;}
+
+
+.episode-info .player-reproduccion{
+  z-index: 3;
+  width:100%;
+  display:flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-flow: column;
+  position:relative;
+}
+
+.episode-info .player-reproduccion .controles__reproduccion{
+  display: flex;
+  justify-content:flex-start;
+  margin: 0;
+}
+
+.episode-info .player-reproduccion .controles__reproduccion button{
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0.5em;
+  color:black;
+}
+
+.episode-info .player-reproduccion .controles__reproduccion i{
+  font-size: 35px;
+  transition-property: transform color;
+  transition-duration: 0.3s ease;
+  color: #222;
+}
+.episode-info .player-reproduccion .controles__reproduccion i:hover{
+  color:#FF8103 ;
+}
+
+.episode-info .player-reproduccion .controles__reproduccion i:focus{
+  color:#FF8103 ;
+}
+
+.episode-info .player-reproduccion .progreso_volumen {
+  display: inline-flex;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 20px 0;
+}
+
+.episode-info .player-reproduccion  .progreso_volumen .progreso__reproduccion{
+  display: flex;
+  flex-flow: column;
+  width: 80%;
+  margin-bottom: 10px;
+  margin: 0 20px;
+  color: #000;
+}
+
+.episode-info .progreso_volumen .controles__volumen{
+  position: relative;
+  margin-left: 3rem;
+  flex-grow: 1;
+  width: 20%;
+}
+.episode-info .progreso_volumen .controles__volumen button{
+  width: 1.5em;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0.5em;
+  color: black;
+  margin: 0;
+}
+
+.episode-info .progreso_volumen .controles__volumen i{
+  font-size: 15px;
+  transition-property: transform color;
+  transition-duration: 0.3s ease;
+  color: black;
+}
+.episode-info .progreso_volumen .controles__volumen i:hover{
+  color:#FF8103 ;
+}
+.episode-info .progreso_volumen .controles__volumen input{
+  position: absolute;
+  width: 100px;
+  right: 30px;
+  top:15px;
+}
+
+.episode-info input[type="range"]{
+  cursor: pointer;
+  height: 2px;
+  margin-bottom: 20px;
+  background-color: #FF8103; 
+}
+.episode-info input[type="range"]:active{
+  cursor: grabbing;
+}
+
+
+
+#about{width: 100%; height: 100vh; overflow: hidden;}
+#about .txt-content{position: absolute; z-index: 5; height: 400px;display: flex; justify-content: center; align-items: center; flex-flow: column;}
+.txt-content .title{width: 100%; font-family: 'Anton', sans-serif; text-align: center; margin: 0; padding: 0; text-transform: uppercase; letter-spacing: 3px;}
+
+#bg_about{
+  width: 100%;
+  height:100vh;
+  background: url(../img/bg.png) no-repeat;
+  background-size: cover;
+  z-index: 1;
+  position: absolute;
+  filter: blur(1px);
+}
+.podcasters{
+  position: absolute;
+  bottom: 0;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  z-index: 3;
+}
+
+.podcasters-name{
+  background: black;
+  position: absolute;
+  z-index: 2;
+  color: white;
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#kaly{z-index: 4;right: 0; margin: auto;}
+
+
+
+
+#contacto{
+  background:black;
+  color: white;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+
+#contacto .txt_action{
+  display: flex;
+  flex-flow: column;
+  justify-content:center;
+  align-items:center;
+}
+
+.txt-cta .subtxt{padding: 0;margin: 0; font-family: 'Bebas Neue', sans-serif; text-transform: uppercase; letter-spacing: 7px; font-size: 24px;}
+.txt-cta .CTA{font-family: 'Anton', sans-serif; letter-spacing: 10px;padding: 0px; margin: 0px; text-transform: uppercase;}
+
+.txt_action .social{
+  height: 60px;
+  display: inline-flex;
+  align-items: center;
+}
+.txt_action .social a{ width: 50px; text-decoration: none;}
+.txt_action .social a i{font-size: 35px; color: white; transition: color 250ms ease;}
+.txt_action .social a:hover i{color: #FF8103;}
+
+#contacto .contact-form{
+  display: flex;
+  position: relative;
+  flex-flow: column;
+  justify-content:center;
+  align-items:center;
+}
+
+
+.contactbutton {
+  background: rgb(52,52,52);
+  background: radial-gradient(circle, rgba(52,52,52,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 100%);
+-webkit-box-shadow: 1px 1px 0 0 #FF13A1,2px 2px 0 0 #FF13A1,3px 3px 0 0 #FF13A1;
+box-shadow: 1px 1px 0 0 #FF13A1,2px 2px 0 0 #FF13A1,3px 3px 0 0 #FF13A1;
+text-align: center;
+display:flex;
+border-radius: 50%;
+margin-top: 20px;
+margin-bottom: 2px;
+cursor: pointer;
+justify-content: center;
+align-items: center;
+text-decoration: none;
+font-family: 'Bebas Neue', sans-serif; 
+letter-spacing: 5px;
+padding: 0px; 
+margin: 0px;
+color: white;
+transition: all 250ms ease;
+}
+.contactbutton:hover {
+-webkit-box-shadow: 1px 1px 0 0 #FF13A1,0px 0px 0 0 #FF13A1,0px 0px 0 0 #FF13A1;
+box-shadow: 1px 1px 0 0 #FF13A1,0px 0px 0 0 #FF13A1,0px 0px 0 0 #FF13A1;
+margin-top: 22px;
+margin-left: 2px;
+margin-bottom: 0px;
+color: #FF8103;
+}
+
+.contact-form .txt-contact{font-size: 20px; font-family: 'Bebas Neue', sans-serif; letter-spacing: 10px;padding: 0px; margin: 0px;}
+
+#contacto .copy{ width: 100%; position: absolute; bottom: 0; text-align: center; font-size: 14px; padding: 10px 0;}
+
+
+   
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .visually-hidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * The use of `table` rather than `block` is only necessary if using
+ * `::before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+/* Smarth phones hasta 280 */
+@media screen and (min-width: 17.5em) {
+  .txt-welcome{letter-spacing:2px;font-size:16px;}
+   #logo{width:200px;}
+   #logo img{margin-left:20px;}
+   .menu{width: 300px;}
+   .menu ul li{margin: 0 10px; }
+   .menu ul li a{ font-size: 16px;}
+
+   #principal{ display:flex; background-position: left center; flex-direction: column;}
+    #trailer {width: 100%;}
+    #trailer_button img{width: 65%;}
+    .sound-wave {height: 40px;margin: 40px auto;}
+
+    #identidad{ width:100%;}
+    .content{ width:80%; padding-top:30px; justify-content: center;align-items: center;}
+    #logotype img{ width: 100%;}
+    .content .txt_w {font-size: 14px; width: 100%;}
+    #stream a{ width: 30%;}
+
+    .subttwo{font-size: 14px;letter-spacing:5px;}
+    .titlePink {font-size: 50px;letter-spacing: 10px;}
+    .titleOrange {font-size:50px;letter-spacing: 10px;}
+    .content_80{justify-content: center; align-items: flex-start;}
+    #episodios{height: auto; min-height: 100vh;}
+    #episodios .subttwo{margin-top:10px;letter-spacing: 15px;}
+    .divisor{ width: 50%; top:175px;}
+    
+    /*Episodes playlist*/
+    .episode-player{display:flex;justify-content:center;align-items:center;margin-top: 8rem;flex-flow: column;}
+    .episode{width: 80%;border-radius: 0px 20px 100px 20px;margin-right:4rem;}
+    .episode .episode__cover{width: 150px;height:150px;left: 50%;top:5%}
+    
+    .episode .cover__listening{border-radius: 0px 20px 100px 20px;}   
+    .episode-info{width:100%; margin-top: 20px; margin-left:10px;}
+    
+    .episode-info .emision{height: 30px;}
+    .episode-info .emision-date {font-size:18px; margin-right: 20px;}
+    .episode-info .episode-duration {font-size: 25px;}
+    .episode-info .emision i{ font-size: 25px; margin-right: 10px;}
+    .episode-info .descripcion{ height:auto;}
+    .episode-info .episode_name{ font-size: 30px; margin:10px 0;}
+    .episode-info .episode-description{font-size:16px; margin: 10px 0;}
+    .episode-info .episode-acotacion{margin: 20px 0;}
+
+
+    #about .txt-content{top: 3rem;  width: 70%;}
+    .txt-content .title{font-size:55px;}   
+    #bg_about{background-position:left;}
+    .podcasters{width:auto;height: 300px;} 
+    .podcasters-name{width: 150px;height: 50px;border-radius: 30px 0px 30px 0px;font-size: 20px;letter-spacing: 8px;}
+    #kalid{left:0; bottom:32%;}
+    #kaly{bottom:32%; left:32%;}
+    #nina{right:0%; bottom:32%;}
+
+    #contacto{display:flex;justify-content: center;flex-direction:column;} 
+    #contacto .txt_action{width: 100%;height:50%;}
+    .txt-cta{width: 100%;text-align: center;}
+    .txt-cta .CTA{font-size: 80px;}
+    .txt-cta .simple-txt{margin-top:0;}
+    .txt_action .social{width: 100%;justify-content:center;margin-top: 30px;}  
+    #contacto .contact-form{width: 100%;height: 30%;}
+    .contactbutton {width:150px;height: 150px;font-size:20px; }
+    
+    
+    
+    
+    
+
+
+
+    
+
+
+}
+
+/* Tablets vertical 530px */
+@media screen and (min-width: 33.125em){}
+
+/* Tablets horizontal 968px */
+@media screen and (min-width: 60em) {}
+
+/* Desktops hasta 1280px */
+@media screen and (min-width: 80em){
+  .txt-welcome{letter-spacing:5px;font-size:20px;}
+  #logo{width: 430px;}
+  #logo img{margin-left: 50px;}
+  .menu{width: 500px;}  
+  .menu ul li{margin: 0 20px;}
+  .menu ul li a{ font-size: 18px;}
+
+  #principal{ display: inline-flex; background-position: top center; flex-direction: row;}
+    #trailer {width: 35%;}
+    #trailer_button img{width: 85%;}
+    .sound-wave {height: 50px;margin: 60px auto;}
+  
+    #identidad{ width: 65%;}
+    .content{ width: 70%; padding-top:150px; justify-content: flex-start; align-items:flex-start;}
+    #logotype img{ width: 93%;}
+    .content .txt_w {font-size: 16px; width: 90%;}
+    #stream a{ width: 15%;}
+
+    .subttwo{font-size: 30px;letter-spacing: 10px; }
+    .titlePink {font-size: 250px;letter-spacing: 40px;}
+    .titleOrange {font-size: 250px;letter-spacing: 20px;}
+    .content_80{justify-content: flex-start; align-items: flex-start;}
+    #episodios{height:100vh; min-height: 100vh;}
+    #episodios .subttwo{margin-top: 180px;letter-spacing: 30px;}
+    .divisor{ width: 70%; top:195px;}
+    
+    /*Episodes playlist*/
+    .episode-player{display: inline-flex;justify-content: flex-start;align-items: flex-start;margin-top: 4rem;flex-flow: row;}
+    .episode{width: 35%; border-radius: 0px 20px 200px 20px; margin-right: 4rem;}
+    .episode .episode__cover{width: 250px;height: 250px;left: 70%;top:10%}
+    
+    .episode .cover__listening{border-radius: 0px 20px 200px 20px;}
+    .episode-info{width: 55%;margin-left: 5rem; margin-top: 0px;}
+    
+    .episode-info .emision{height: 50px;}
+    .episode-info .emision-date {font-size: 25px; margin-right: 0px;}
+    .episode-info .episode-duration {font-size: 25px;}
+    .episode-info .emision i{ font-size: 35px; margin-right: 20px;}
+    .episode-info .descripcion{ height: 250px;}
+    .episode-info .episode_name{font-size: 40px;margin:10px 0;}
+    .episode-info .episode-description{font-size:16px; margin: 10px 0;}
+    .episode-info .episode-acotacion{margin: 30px 0;}
+
+    #about .txt-content{top: 0; width: 70%;}
+    .txt-content .title{font-size: 100px;}
+    #bg_about{background-position: center;}
+    .podcasters{width: 65%;height:auto;}
+    .podcasters-name{width: 300px;height: 70px;border-radius: 80px 0px 80px 0px;font-size: 34px;letter-spacing: 10px;}
+    #kalid{left: 12%; bottom:60px;}
+    #kaly{bottom:0;left: 0;}
+    #nina{right: 9%; bottom: 5rem;}
+
+    #contacto{display: inline-flex;justify-content: flex-start;flex-direction: row;}
+    #contacto .txt_action{width: 50%;height: 100%;}
+    .txt-cta{width: 70%; text-align: left;}
+    .txt-cta .CTA{font-size: 130px;}
+    .txt-cta .simple-txt{margin-top: -5px;}
+    .txt_action .social{width: 70%;justify-content:flex-start;margin-top: 30px;}
+    
+    #contacto .contact-form{width: 50%;height: 100%;}
+    
+    
+    .contactbutton {width:250px;height: 250px;font-size:24px; }
+    
+    
+    
+   
+
+    
+
+}
+
+
+
+
+
+
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
