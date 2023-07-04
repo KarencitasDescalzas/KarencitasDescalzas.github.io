@@ -524,7 +524,7 @@ textarea {
 .stream_extern .platforms{ width: 15%;display: inline-flex; justify-content:space-around; align-items: center; height: 100%; position: relative;}
 .stream_extern .platforms a{width: 45%; height: 100%; text-decoration: none;margin-right: 10px; display: flex; justify-content: center; align-items: center;}
 .stream_extern .platforms a img{ height: 70%;}
-.hover_stream { padding:10px; width:20%; height:auto; border-radius: 20px; background: black; position: absolute; text-align: center; font-size: 12px !important; color: white !important; top: -50px; display:none; right: 0;}
+.hover_stream { padding:10px; width:20%; height:auto; border-radius: 20px; background: black; position: absolute; text-align: center; font-size: 12px !important; color: white !important; top: -50px; display:none;}
 .stream_extern .platforms a:hover .hover_stream{display: block;}
 
 .episode-info{
