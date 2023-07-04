@@ -103,7 +103,7 @@ textarea {
     scroll-snap-align: start;
     scroll-snap-stop: always;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
   }
   
   section:nth-of-type(even) {
@@ -116,7 +116,7 @@ textarea {
     background: white;
   }
   
-  .scroll{display:flex; flex-flow: column; justify-content:center; align-items: center; width: 100%; position: absolute; bottom: 2rem;}
+  .scroll{display:flex; flex-flow: column; justify-content:center; align-items: center; width: 100%; position: absolute;}
   .scroll-down {
     margin-top:15px;
     position:relative;
@@ -156,37 +156,7 @@ textarea {
     100% { transform:translate(0,10px) rotate(45deg); opacity: 0; }
   }
 
-  .ir-arriba {
-    display: none;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    background: #FF13A1;
-    font-size: 2rem;
-    color: #fff;
-    cursor: pointer;
-    position: fixed;
-    bottom: 20px;
-    right: 4%;
-    z-index: 80;
-    text-align: center;
-    transition: all 2s ease-in-out; }
-    .ir-arriba:hover {
-      background: black;
-      transition: all 2s ease-in-out; }
-    .ir-arriba svg {
-      width: 40%;
-      height: 40%;
-      top: 11px;
-      position: absolute;
-      left: 0;
-      right: 0;
-      margin: auto; }
-
-
-
-
-
+  
 
    .txt-welcome{font-family: 'Bebas Neue', sans-serif; color: white;}
    .txt_w{color:white;}
@@ -197,7 +167,7 @@ textarea {
    .oculto{display: none;}
    .txt-bold{font-weight: 600; color: black;}
    
-   header {width: 100%; position: fixed; display: inline-flex;justify-content: flex-start;align-content: center;height: 80px;z-index: 20;}
+   header {width: 100%;display: inline-flex;justify-content: flex-start;align-content: center;height: 80px;z-index: 20;}
 
    #logo{background: black;height: 80px;border-radius: 0px 0px 30px 0px;display: inline-flex;justify-content: space-around;align-items: center;}
    #logo img{ width: 35%;}
@@ -208,7 +178,7 @@ textarea {
    .menu ul li a:hover{color: #FF8103;}
 
 
-#principal{ background: url(../img/bg_webKD.png) no-repeat; width: 100%; height: 100vh; background-size: cover;  position: relative;}
+#principal{ background: url(../img/bg_webKD.png) no-repeat; width: 100%;background-size: cover;  position: relative;}
 #trailer {display: flex; justify-content: center;}
 #trailer_button{ width: 100%;display: flex; justify-content:center; filter: drop-shadow(2px 3px 8px rgba(0,0,0,.3));}
 #trailer_button:hover{cursor: pointer; filter: drop-shadow(2px 3px 8px rgba(255,19,161,.5));}
@@ -264,7 +234,7 @@ textarea {
 #identidad{display: flex; justify-content:center; align-items: center;}
 .content{display: flex;flex-flow: column;}
 .subtitle{ color: white; text-transform: uppercase;font-size: 20px;letter-spacing: 20px; font-family: 'Bebas Neue', sans-serif;}
-#logotype{width: 100%;}
+#logotype{width: 100%; display: flex;}
 .content .txt_w {text-align: center; padding: 10px 0;}
 #stream{ padding:10px 0; background: transparent; width: 100%; display: inline-flex; justify-content: center; align-items: center;}
 #stream a{margin: 0 20px;}
@@ -279,8 +249,6 @@ textarea {
   width: 100%;
   position:fixed;
   background:black;
-  height: 180px;
-  bottom: 0;
   z-index: 2;
 }
 .reproductor-trailer {
@@ -290,15 +258,12 @@ textarea {
   justify-content: flex-start;
 }
 .reproductor-trailer .circle {
-  width:25%;
-  right: 0;
   position:relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .reproductor-trailer .circle img {
-  max-width: 150px;
   border-radius: 50%;
   margin-bottom: 10px;
   position: absolute;
@@ -320,30 +285,20 @@ textarea {
 }
 .reproductor-trailer .circle .circ {
   position: absolute;
-  width: 30px;
-  height: 30px;
-  left: 47%;
-  top: 44%;
   background-color: rgb(75, 75, 75);
   border: 3px solid rgb(15,15,15);
   border-radius: 50%;
   z-index: 1;
 }
 .reproductor-trailer .player-trailer {
-  width:50%;
   position: relative;
   top: 0;
-  margin-left: 15px;
   font-family: 'Bebas Neue', sans-serif;
   letter-spacing: 2px;
   color: white;
 }
-.reproductor-trailer .player-trailer .active {
-  top: -100px;
-}
+
 .reproductor-trailer .player-trailer .time {
-  font-size: 16px;
-  margin: 10px 0px;
   height: 6px;
   color: white;
 }
@@ -360,29 +315,17 @@ textarea {
 }
 .reproductor-trailer .player-trailer .trailer-name {
   font-weight: bold;
-  font-size: 28px;
-  margin: 25px 0;
-
 }
 .reproductor-trailer .player-trailer .podcaster-name {
-  font-size: 14px;
   margin-bottom: 10px;
 }
-.reproductor-trailer .player-control {
-  width:20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height:180px;
-}
+.reproductor-trailer .player-control {display: flex;}
 .reproductor-trailer .player-control #play {
   border-radius: 50%;
 }
 .reproductor-trailer .player-control i {
-  font-size: 110px;
   cursor: pointer;
   text-align: center;
-  margin-left: 60px;
 }
 .reproductor-trailer .player-control i:before {
   color: white;
@@ -390,12 +333,11 @@ textarea {
 }
 .reproductor-trailer .player-control i:hover:before {
   color: #FF8103;
-  opacity: 0.7;
 }
 
 
 
-.subttwo{ text-transform: uppercase;font-family: 'Bebas Neue', sans-serif;}
+.subttwo{ text-transform: uppercase;font-family: 'Bebas Neue', sans-serif; text-align: center; }
 
 .sliced{
   justify-content: center;
@@ -404,11 +346,11 @@ textarea {
   flex-direction: column;
   z-index: 5;
   position: relative;
+  min-height: 100vh;
 }
 .titlePink {
   position: relative;
   color: white;
-  padding: 20px 50px;
   font-family: 'Anton', sans-serif;
   text-transform: uppercase;
 }
@@ -421,7 +363,6 @@ textarea {
   position: absolute;  
   top: 0;  
   left: 0;
-  padding: 20px 50px;
     -webkit-clip-path: polygon(0% 0% , 30% 0%, 30% 100%, 0% 100%);  
   clip-path: polygon(0% 0% , 30% 0%, 30% 100%, 0% 100%);
   animation: slide 4s 1s linear infinite; 
@@ -430,7 +371,6 @@ textarea {
 .titleOrange {
   position: relative;
   color: black;
-  padding: 20px 50px;
   font-family: 'Anton', sans-serif;
   text-transform: uppercase;
   text-align: center;
@@ -444,7 +384,6 @@ textarea {
   position: absolute;  
   top: 0;  
   left: 0;
-  padding: 20px 50px;
     -webkit-clip-path: polygon(0% 0% , 30% 0%, 30% 100%, 0% 100%);  
   clip-path: polygon(0% 0% , 30% 0%, 30% 100%, 0% 100%);
   animation: slide 4s 1s linear infinite; 
@@ -471,6 +410,7 @@ textarea {
   display: flex;
   min-height: 100%;
   flex-direction: column;
+  position: relative;
 }
 
 .txt_black{
@@ -578,6 +518,14 @@ textarea {
 }
 .episode .cover__listening img{width:100%; display: block; margin: -45px auto;}
 
+
+.stream_extern{width:58%; background:transparent; height: 45px; position: absolute;z-index: 4; bottom:10rem; right: 2rem; border-radius: 0px 40px 0px 40px; display: inline-flex; justify-content:flex-end; align-items: center;}
+.stream_extern p{font-family: 'Bebas Neue', sans-serif; text-transform: uppercase; font-size: 16px; width: 30%;margin-left: 20px; letter-spacing: 2px; text-align: center; color: black;}
+.stream_extern .platforms{ width: 15%;display: inline-flex; justify-content:space-around; align-items: center; height: 100%; position: relative;}
+.stream_extern .platforms a{width: 45%; height: 100%; text-decoration: none;margin-right: 10px; display: flex; justify-content: center; align-items: center;}
+.stream_extern .platforms a img{ height: 70%;}
+.hover_stream { padding:10px; width:20%; height:auto; border-radius: 20px; background: black; position: absolute; text-align: center; font-size: 12px !important; color: white !important; top: -50px; display:none; right: 0;}
+.stream_extern .platforms a:hover .hover_stream{display: block;}
 
 .episode-info{
   height: 100%;
@@ -688,7 +636,7 @@ textarea {
   cursor: pointer;
   padding: 0.5em;
   color: black;
-  margin: 0;
+  margin: -20px;
 }
 
 .episode-info .progreso_volumen .controles__volumen i{
@@ -703,8 +651,8 @@ textarea {
 .episode-info .progreso_volumen .controles__volumen input{
   position: absolute;
   width: 100px;
-  right: 30px;
-  top:15px;
+  right: 25px;
+  top:10px;
 }
 
 .episode-info input[type="range"]{
@@ -916,31 +864,50 @@ color: #FF8103;
    ========================================================================== */
 /* Smarth phones hasta 280 */
 @media screen and (min-width: 17.5em) {
-  .txt-welcome{letter-spacing:2px;font-size:16px;}
-   #logo{width:200px;}
+  header{position:absolute;}
+  .scroll{bottom:10px;}
+  .txt-welcome{letter-spacing:2px;font-size:14px;}
+   #logo{width:50%;}
    #logo img{margin-left:20px;}
-   .menu{width: 300px;}
-   .menu ul li{margin: 0 10px; }
+   .menu{width:50%;}
+   .menu ul li{margin: 0 5px; }
    .menu ul li a{ font-size: 16px;}
 
-   #principal{ display:flex; background-position: left center; flex-direction: column;}
-    #trailer {width: 100%;}
-    #trailer_button img{width: 65%;}
-    .sound-wave {height: 40px;margin: 40px auto;}
+   #principal{ display:flex; background-position: left center; flex-direction: column; height: auto;}
+    #trailer {width: 100%; height: 50%; margin-top: 85px;}
+    #trailer_button img{width: 55%;}
+    .sound-wave {height: 40px;margin: 20px 0;}
 
-    #identidad{ width:100%;}
-    .content{ width:80%; padding-top:30px; justify-content: center;align-items: center;}
-    #logotype img{ width: 100%;}
+    #identidad{ width:100%; height: 50%;}
+    .content{ width:80%; padding-top:0; justify-content: center;align-items: center;}
+    #logotype{justify-content: center;align-items: center;}
+    #logotype img{ width: 65%;}
     .content .txt_w {font-size: 14px; width: 100%;}
     #stream a{ width: 30%;}
 
+      /**Reproductor trailer*/
+    .reproductor-container{height: 200px;  bottom:20px;}
+    .reproductor-trailer .circle {width:15%; right: 10px;}
+    .reproductor-trailer .circle img {max-width:48px;}
+    .reproductor-trailer .circle .circ {width: 10px;height: 10px;left: 36%;top: 16%;}
+    .reproductor-trailer .player-trailer {width:60%;margin-left: 15px;}
+    .reproductor-trailer .player-trailer .active {top:0;}
+    .reproductor-trailer .player-trailer .time {font-size: 12px;margin: 5px 0px;}
+
+    .reproductor-trailer .player-trailer .trailer-name {font-size: 18px;margin: 10px 0;}
+    .reproductor-trailer .player-trailer .podcaster-name {font-size: 12px;}
+    .reproductor-trailer .player-control {width:15%;height:200px;justify-content: center;align-items:flex-start;}
+    .reproductor-trailer .player-control i {font-size: 45px;margin-left:10px; margin-top:20px;}
+
     .subttwo{font-size: 14px;letter-spacing:5px;}
-    .titlePink {font-size: 50px;letter-spacing: 10px;}
-    .titleOrange {font-size:50px;letter-spacing: 10px;}
+    .titlePink {font-size: 50px;letter-spacing: 10px; padding: 20px 10px;}
+    .titlePink:before{ padding: 20px 10px;}
+    .titleOrange {font-size:45px;letter-spacing: 10px; padding: 20px 10px;}
+    .titleOrange:before { padding: 20px 10px;}
     .content_80{justify-content: center; align-items: flex-start;}
     #episodios{height: auto; min-height: 100vh;}
     #episodios .subttwo{margin-top:10px;letter-spacing: 15px;}
-    .divisor{ width: 50%; top:175px;}
+    .divisor{ width: 50%; top:105px;}
     
     /*Episodes playlist*/
     .episode-player{display:flex;justify-content:center;align-items:center;margin-top: 8rem;flex-flow: column;}
@@ -948,56 +915,141 @@ color: #FF8103;
     .episode .episode__cover{width: 150px;height:150px;left: 50%;top:5%}
     
     .episode .cover__listening{border-radius: 0px 20px 100px 20px;}   
-    .episode-info{width:100%; margin-top: 20px; margin-left:10px;}
+    .episode-info{width:100%; margin-top: 30px; margin-left:10px;}
     
     .episode-info .emision{height: 30px;}
-    .episode-info .emision-date {font-size:18px; margin-right: 20px;}
-    .episode-info .episode-duration {font-size: 25px;}
+    .episode-info .emision-date {font-size:20px; margin-right: 20px; width: 50%;}
+    .episode-info .episode-duration {font-size: 20px;  width: 50%;}
     .episode-info .emision i{ font-size: 25px; margin-right: 10px;}
     .episode-info .descripcion{ height:auto;}
-    .episode-info .episode_name{ font-size: 30px; margin:10px 0;}
-    .episode-info .episode-description{font-size:16px; margin: 10px 0;}
+    .episode-info .episode_name{ font-size:25px; margin:10px 0;}
+    .episode-info .episode-description{font-size:14px; margin: 10px 0;}
     .episode-info .episode-acotacion{margin: 20px 0;}
 
+    .stream_extern{width:100%; background:black; bottom:55%; right:0;justify-content:flex-start;}
+    .stream_extern p{ font-size: 12px; width:70%;margin-left:30px;text-align:left; color:white;}
+    .stream_extern .platforms a img{ height: 50%;}
+    .hover_stream { padding:25px; width:30%; top: -50px;}
 
     #about .txt-content{top: 3rem;  width: 70%;}
-    .txt-content .title{font-size:55px;}   
+    .txt-content .title{font-size:45px;}   
     #bg_about{background-position:left;}
-    .podcasters{width:auto;height: 300px;} 
-    .podcasters-name{width: 150px;height: 50px;border-radius: 30px 0px 30px 0px;font-size: 20px;letter-spacing: 8px;}
-    #kalid{left:0; bottom:32%;}
-    #kaly{bottom:32%; left:32%;}
-    #nina{right:0%; bottom:32%;}
+    .podcasters{width:auto;height: 300px;}
+    .title span{ background: -webkit-linear-gradient(360deg, rgba(148,39,144,1) 0%, rgba(255,19,161,1) 50%, rgba(255,129,3,1) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    background-clip: text;} 
+    .podcasters-name{width: 110px;height: 50px;border-radius: 30px 0px 30px 0px;font-size:18px;letter-spacing:4px;}
+    #kalid{left:0; bottom:37%;}
+    #kaly{bottom:37%; left:3%;}
+    #nina{right:0%; bottom:37%;}
 
     #contacto{display:flex;justify-content: center;flex-direction:column;} 
     #contacto .txt_action{width: 100%;height:50%;}
     .txt-cta{width: 100%;text-align: center;}
-    .txt-cta .CTA{font-size: 80px;}
+    .txt-cta .CTA{font-size: 65px;}
     .txt-cta .simple-txt{margin-top:0;}
     .txt_action .social{width: 100%;justify-content:center;margin-top: 30px;}  
     #contacto .contact-form{width: 100%;height: 30%;}
     .contactbutton {width:150px;height: 150px;font-size:20px; }
-    
-    
-    
-    
-    
-
-
-
-    
-
-
 }
 
 /* Tablets vertical 530px */
-@media screen and (min-width: 33.125em){}
+@media screen and (min-width: 33.125em){
+  header{position:fixed;}
+  .scroll{bottom:3rem;}
+  .txt-welcome{letter-spacing:2px;font-size:20px;}
+   #logo{width:40%;}
+   #logo img{margin-left:20px;}
+   .menu{width:50%;}
+   .menu ul li{margin: 0 20px; }
+   .menu ul li a{ font-size: 20px;}
+
+   #principal{ display:flex; background-position: center center; flex-direction: column; height:100%;}
+    #trailer {width: 100%; height: 50%; margin-top: 115px;}
+    #trailer_button img{width: 45%;}
+    .sound-wave {height: 40px;margin: 40px 0;}
+
+    #identidad{ width:100%; height: 50%;}
+    .content{ width:80%; padding-top:0; justify-content: center;align-items: center;}
+    #logotype{justify-content: center;align-items: center;}
+    #logotype img{ width: 65%;}
+    .content .txt_w {font-size: 18px; width: 100%;}
+    #stream a{ width: 30%;}
+
+      /**Reproductor trailer*/
+    .reproductor-container{height: 200px;  bottom:0px;}
+    .reproductor-trailer .circle {width:20%; right: 10px;}
+    .reproductor-trailer .circle img {max-width:120px;}
+    .reproductor-trailer .circle .circ {width: 30px;height: 30px;left: 40%;top: 26%;}
+    .reproductor-trailer .player-trailer {width:60%;margin-left: 15px;}
+    .reproductor-trailer .player-trailer .active {top:0px;}
+    .reproductor-trailer .player-trailer .time {font-size: 14px;margin: 10px 0px;}
+
+    .reproductor-trailer .player-trailer .trailer-name {font-size: 22px;margin: 10px 0;}
+    .reproductor-trailer .player-trailer .podcaster-name {font-size: 16px;}
+    .reproductor-trailer .player-control {width:20%;height:200px;justify-content: center;align-items:flex-start;}
+    .reproductor-trailer .player-control i {font-size: 65px;margin-left:10px; margin-top:20px;}
+
+    .subttwo{font-size: 25px;letter-spacing:5px;}
+    .titlePink {font-size: 120px;letter-spacing: 10px; padding: 20px 30px;}
+    .titlePink:before{ padding: 20px 30px;}
+    .titleOrange {font-size:120px;letter-spacing: 10px; padding: 20px 30px;}
+    .titleOrange:before { padding: 20px 30px;}
+    .content_80{justify-content: center; align-items: flex-start;}
+    #episodios{height: auto; min-height: 100vh;}
+    #episodios .subttwo{margin-top:10px;letter-spacing: 25px;}
+    .divisor{ width: 50%; top:22%;}
+    
+    /*Episodes playlist*/
+    .episode-player{display:flex;justify-content:center;align-items:center;margin-top: 8rem;flex-flow: column;}
+    .episode{width: 80%;border-radius: 0px 20px 100px 20px;margin-right:2rem;}
+    .episode .episode__cover{width: 250px;height:250px;left: 65%;top:-50px;}
+    
+    .episode .cover__listening{border-radius: 0px 20px 100px 20px;}   
+    .episode-info{width:100%; margin-top: 30px; margin-left:10px;}
+    
+    .episode-info .emision{height: 35px;}
+    .episode-info .emision-date {font-size:28px; margin-right: 20px; width:30%;}
+    .episode-info .episode-duration {font-size: 28px;  width: 50%;}
+    .episode-info .emision i{ font-size: 40px; margin-right: 10px;}
+    .episode-info .descripcion{ height:auto;}
+    .episode-info .episode_name{ font-size:35px; margin:10px 0;}
+    .episode-info .episode-description{font-size:18px; margin: 10px 0;}
+    .episode-info .episode-acotacion{margin: 20px 0;}
+
+    .stream_extern{width:65%; background:black; bottom:50%; right:12rem;justify-content:flex-start;}
+    .stream_extern p{ font-size: 16px; width:60%;margin-left:30px;text-align:left; color:white;}
+    .stream_extern .platforms a img{ height: 70%;}
+    .hover_stream { padding:25px; width:30%; top: -70px;}
+
+    #about .txt-content{top: 3rem;  width: 70%;}
+    .txt-content .title{font-size:85px;}   
+    #bg_about{background-position:left;}
+    .podcasters{width:auto;height: 600px;}
+    .title span{ background: -webkit-linear-gradient(360deg, rgba(148,39,144,1) 0%, rgba(255,19,161,1) 50%, rgba(255,129,3,1) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    background-clip: text;} 
+    .podcasters-name{width: 130px;height: 50px;border-radius: 30px 0px 30px 0px;font-size:18px;letter-spacing:6px;}
+    #kalid{left:2%; bottom:45%;}
+    #kaly{bottom:50%; left:3%;}
+    #nina{right:2%; bottom:45%;}
+
+    #contacto{display:flex;justify-content: center;flex-direction:column;} 
+    #contacto .txt_action{width: 100%;height:50%;}
+    .txt-cta{width:85%;text-align: center;}
+    .txt-cta .CTA{font-size: 95px;}
+    .txt-cta .simple-txt{margin-top:0;}
+    .txt_action .social{width: 100%;justify-content:center;margin-top: 30px;}  
+    #contacto .contact-form{width: 100%;height: 30%;}
+    .contactbutton {width:300px;height: 300px;font-size:28px; }
+}
 
 /* Tablets horizontal 968px */
-@media screen and (min-width: 60em) {}
-
-/* Desktops hasta 1280px */
-@media screen and (min-width: 80em){
+@media screen and (min-width: 60em) {
+  header{position:fixed;}
+  .scroll{bottom:2rem;}
   .txt-welcome{letter-spacing:5px;font-size:20px;}
   #logo{width: 430px;}
   #logo img{margin-left: 50px;}
@@ -1005,20 +1057,136 @@ color: #FF8103;
   .menu ul li{margin: 0 20px;}
   .menu ul li a{ font-size: 18px;}
 
-  #principal{ display: inline-flex; background-position: top center; flex-direction: row;}
-    #trailer {width: 35%;}
+  #principal{ display: inline-flex; background-position: top center; flex-direction: row; height: 100vh;}
+    #trailer {width: 35%; height: 100%;  margin-top:50px;}
+    #trailer_button img{width: 75%;}
+    .sound-wave {height: 50px;margin: 60px auto;}
+  
+    #identidad{ width: 65%; height: 100%;}
+    .content{ width: 70%; padding-top:80px; justify-content: flex-start; align-items:flex-start;}
+    #logotype{justify-content:flex-start;align-items: center;}
+    #logotype img{ width:100%;}
+    .content .txt_w {font-size: 16px; width: 100%;}
+    #stream a{ width: 25%;}
+
+    /**Reproductor trailer*/
+    .reproductor-container{height: 180px;bottom: 0;}
+    .reproductor-trailer .circle {width:25%;right: 0;}
+    .reproductor-trailer .circle img {max-width: 150px;}
+    .reproductor-trailer .circle .circ {width: 30px;height: 30px;left: 44%;top: 44%;}
+    .reproductor-trailer .player-trailer {width:50%;margin-left: 15px;}
+    .reproductor-trailer .player-trailer .active {top: -100px;}
+    .reproductor-trailer .player-trailer .time {font-size: 16px;margin: 10px 0px;}
+    .reproductor-trailer .player-trailer .trailer-name {font-size: 28px;margin: 20px 0;}
+    .reproductor-trailer .player-trailer .podcaster-name {font-size: 14px;}
+    .reproductor-trailer .player-control {width:20%;justify-content: center;align-items: center;height:180px;}
+    .reproductor-trailer .player-control i {font-size: 105px;margin-left: 60px;}
+
+
+
+    .subttwo{font-size: 20px;letter-spacing: 10px;}
+    .titlePink {font-size: 150px;letter-spacing: 40px; padding: 20px 50px;}
+    .titlePink:before{ padding: 20px 50px;}
+    .titleOrange {font-size: 150px;letter-spacing: 20px; padding: 20px 50px;}
+    .titleOrange:before{ padding: 20px 50px;}
+    .content_80{justify-content: flex-start; align-items: flex-start;}
+    #episodios{height:100vh; min-height: 100vh;}
+    #episodios .subttwo{margin-top: 100px;letter-spacing: 15px;}
+    .divisor{ width: 70%; top:15%;}
+    
+    /*Episodes playlist*/
+    .episode-player{display: inline-flex;justify-content: flex-start;align-items: flex-start;margin-top: 2rem;flex-flow: row;}
+    .episode{width: 35%; border-radius: 0px 20px 200px 20px; margin-right: 4rem;}
+    .episode .episode__cover{width: 200px;height: 200px;left: 70%;top:10%}
+    
+    .episode .cover__listening{border-radius: 0px 20px 200px 20px;}
+    .episode-info{width: 55%;margin-left: 5rem; margin-top: 0px;}
+    
+    .episode-info .emision{height: 50px;}
+    .episode-info .emision-date {font-size: 25px; margin-right: 0px;width: 25%;}
+    .episode-info .episode-duration {font-size: 25px;width: 25%;}
+    .episode-info .emision i{ font-size: 35px; margin-right: 20px;}
+    .episode-info .descripcion{ height: 250px;}
+    .episode-info .episode_name{font-size: 40px;margin:10px 0;}
+    .episode-info .episode-description{font-size:16px; margin: 10px 0;}
+    .episode-info .episode-acotacion{margin: 20px 0;}
+    
+
+    .stream_extern{width:80%; background:transparent; bottom:4rem; right: 2rem; justify-content:flex-end;}
+    .stream_extern p{font-size: 16px; width: 30%;margin-left: 20px;text-align: center; color: black;}
+    .stream_extern .platforms a img{ height: 80%;}
+    .hover_stream { padding:20px; width:30%; top: -50px;}
+
+
+    #about .txt-content{top: 0; width: 70%;}
+    .txt-content .title{font-size: 60px;}
+    #bg_about{background-position: center;}
+    .podcasters{width: 80%;height:auto;}
+    .title span{ background: -webkit-linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    background-clip: text;} 
+    .podcasters-name{width: 200px;height: 70px;border-radius: 80px 0px 80px 0px;font-size:25px;letter-spacing: 10px;}
+    #kalid{left:2%; bottom:3rem;}
+    #kaly{bottom:0;left: 0;}
+    #nina{right: 1%; bottom: 10rem;}
+
+    #contacto{display: inline-flex;justify-content: flex-start;flex-direction: row;}
+    #contacto .txt_action{width: 50%;height: 100%;}
+    .txt-cta{width: 80%; text-align: left;}
+    .txt-cta .CTA{font-size: 130px;}
+    .txt-cta .simple-txt{margin-top: -5px;}
+    .txt_action .social{width: 80%;justify-content:flex-start;margin-top: 30px;}
+    
+    #contacto .contact-form{width: 50%;height: 100%;}
+    
+    .contactbutton {width:250px;height: 250px;font-size:24px; }   
+
+}
+
+/* Desktops hasta 1280px */
+@media screen and (min-width: 80em){
+  header{position:fixed;}
+  .scroll{bottom:2rem;}
+  .txt-welcome{letter-spacing:5px;font-size:20px;}
+  #logo{width: 430px;}
+  #logo img{margin-left: 50px;}
+  .menu{width: 500px;}  
+  .menu ul li{margin: 0 20px;}
+  .menu ul li a{ font-size: 18px;}
+
+  #principal{ display: inline-flex; background-position: top center; flex-direction: row; height: 100vh;}
+    #trailer {width: 35%; height: 100%;  margin-top:0px;}
     #trailer_button img{width: 85%;}
     .sound-wave {height: 50px;margin: 60px auto;}
   
-    #identidad{ width: 65%;}
+    #identidad{ width: 65%; height: 100%;}
     .content{ width: 70%; padding-top:150px; justify-content: flex-start; align-items:flex-start;}
+    #logotype{justify-content:flex-start;align-items: center;}
     #logotype img{ width: 93%;}
     .content .txt_w {font-size: 16px; width: 90%;}
     #stream a{ width: 15%;}
 
-    .subttwo{font-size: 30px;letter-spacing: 10px; }
-    .titlePink {font-size: 250px;letter-spacing: 40px;}
-    .titleOrange {font-size: 250px;letter-spacing: 20px;}
+    /**Reproductor trailer*/
+    .reproductor-container{height: 180px;bottom: 0;}
+    .reproductor-trailer .circle {width:25%;right: 0;}
+    .reproductor-trailer .circle img {max-width: 150px;}
+    .reproductor-trailer .circle .circ {width: 30px;height: 30px;left: 47%;top: 44%;}
+    .reproductor-trailer .player-trailer {width:50%;margin-left: 15px;}
+    .reproductor-trailer .player-trailer .active {top: -100px;}
+    .reproductor-trailer .player-trailer .time {font-size: 16px;margin: 10px 0px;}
+    .reproductor-trailer .player-trailer .trailer-name {font-size: 28px;margin: 25px 0;}
+    .reproductor-trailer .player-trailer .podcaster-name {font-size: 14px;}
+    .reproductor-trailer .player-control {width:20%;justify-content: center;align-items: center;height:180px;}
+    .reproductor-trailer .player-control i {font-size: 110px;margin-left: 60px;}
+
+
+
+    .subttwo{font-size: 30px;letter-spacing: 10px;}
+    .titlePink {font-size: 250px;letter-spacing: 40px; padding: 20px 50px;}
+    .titlePink:before{ padding: 20px 50px;}
+    .titleOrange {font-size: 250px;letter-spacing: 20px; padding: 20px 50px;}
+    .titleOrange:before{ padding: 20px 50px;}
     .content_80{justify-content: flex-start; align-items: flex-start;}
     #episodios{height:100vh; min-height: 100vh;}
     #episodios .subttwo{margin-top: 180px;letter-spacing: 30px;}
@@ -1033,18 +1201,29 @@ color: #FF8103;
     .episode-info{width: 55%;margin-left: 5rem; margin-top: 0px;}
     
     .episode-info .emision{height: 50px;}
-    .episode-info .emision-date {font-size: 25px; margin-right: 0px;}
-    .episode-info .episode-duration {font-size: 25px;}
+    .episode-info .emision-date {font-size: 25px; margin-right: 0px;width: 25%;}
+    .episode-info .episode-duration {font-size: 25px;width: 25%;}
     .episode-info .emision i{ font-size: 35px; margin-right: 20px;}
     .episode-info .descripcion{ height: 250px;}
     .episode-info .episode_name{font-size: 40px;margin:10px 0;}
     .episode-info .episode-description{font-size:16px; margin: 10px 0;}
     .episode-info .episode-acotacion{margin: 30px 0;}
+    
+
+    .stream_extern{width:58%; background:transparent; bottom:10rem; right: 2rem; justify-content:flex-end;}
+    .stream_extern p{font-size: 16px; width: 30%;margin-left: 20px;text-align: center; color: black;}
+    .stream_extern .platforms a img{ height: 70%;}
+    .hover_stream { padding:10px; width:20%; top: -50px;}
+
 
     #about .txt-content{top: 0; width: 70%;}
     .txt-content .title{font-size: 100px;}
     #bg_about{background-position: center;}
     .podcasters{width: 65%;height:auto;}
+    .title span{ background: -webkit-linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    background-clip: text;} 
     .podcasters-name{width: 300px;height: 70px;border-radius: 80px 0px 80px 0px;font-size: 34px;letter-spacing: 10px;}
     #kalid{left: 12%; bottom:60px;}
     #kaly{bottom:0;left: 0;}
@@ -1059,14 +1238,7 @@ color: #FF8103;
     
     #contacto .contact-form{width: 50%;height: 100%;}
     
-    
-    .contactbutton {width:250px;height: 250px;font-size:24px; }
-    
-    
-    
-   
-
-    
+    .contactbutton {width:250px;height: 250px;font-size:24px; }   
 
 }
 

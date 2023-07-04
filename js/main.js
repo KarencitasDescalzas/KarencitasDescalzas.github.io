@@ -145,7 +145,11 @@ let episodioAcotaciones = ['No solo es ciencia ficción... ¿O sí?','Acompáña
 let emisionDate = ['30 junio 2023','16 junio 2023','02 junio 2023', '19 mayo 2023', '07 mayo 2023'];
 let episodeDuration = ['24 min','32 min', '30 min', '28 min', '40 min',];
 let episodeNumber = ['E8','E7', 'E6', 'E5', 'E4',];
-let icono = [], uris = {musica: 'img/episodios/audios/', caratula: 'img/episodios/covers/', covers: 'img/episodios/covers/'}, reproduciendo = 0;
+let spotiUrl = ['https://open.spotify.com/episode/3mcU07xEf0BPAdrUJcqmLZ','https://open.spotify.com/episode/5wKKXscAoOwiGM3ARtZVAo', 'https://open.spotify.com/episode/6630kdfTP3BDFYMKlqYLDC', 'https://open.spotify.com/episode/58f9j6256kBIJjjDnrfShL', 'https://open.spotify.com/episode/0BRrEFGcJiQW2CvgYkw5Uv'];
+let gpUrl = ['https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy85MDJiNDIzNC9wb2RjYXN0L3Jzcw/episode/N2IyMTZlMjQtNTdkNC00MzI4LWExMzktZDkyM2RiMWIxMDBk?sa=X&ved=0CAUQkfYCahcKEwjQlMe_-vX_AhUAAAAAHQAAAAAQLA','https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy85MDJiNDIzNC9wb2RjYXN0L3Jzcw/episode/NDUyMzY4ZGEtMDRlMy00MzMxLTk3OWYtYzIwYjQ1ZTU2NGQ0?sa=X&ved=0CAUQkfYCahcKEwjQlMe_-vX_AhUAAAAAHQAAAAAQLA', 
+'https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy85MDJiNDIzNC9wb2RjYXN0L3Jzcw/episode/ZGRkZjdkMDctN2Q3NS00OTY5LThmOTgtNzMyNzQ3NmVjMjMz?sa=X&ved=0CAUQkfYCahcKEwjQlMe_-vX_AhUAAAAAHQAAAAAQLA', 'https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy85MDJiNDIzNC9wb2RjYXN0L3Jzcw/episode/MzA0ZjlkM2YtNWY5My00N2ExLWE1NjAtNjBlOGM0ZWY1MWMy?sa=X&ved=0CAUQkfYCahcKEwjQlMe_-vX_AhUAAAAAHQAAAAAQLA', 
+'https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy85MDJiNDIzNC9wb2RjYXN0L3Jzcw/episode/OTE5MjU4OTItYzZiYS00OGQwLWIzMDQtYjZlYjNjNTczZWUx?sa=X&ved=0CAUQkfYCahcKEwjQlMe_-vX_AhUAAAAAHQAAAAAQLA'];
+let icono = [], uris = {musica: 'img/episodios/audios/', caratula: 'img/episodios/covers/', covers: 'img/episodios/covers/'},reproduciendo = 0;
 let cancion = {
   audio: new Audio(),
   URI: '',
@@ -178,7 +182,6 @@ function iniciarReproductor(){
   reproductor.covers = document.querySelector('.cover__listening img');
   reproductor.duracion = document.querySelector('.progreso__reproduccion time');
   reproductor.nodo = document.querySelector('.episode-player');
-
   reproductor.boton['reproducirPausa'].addEventListener('click', alternarReproduccion);
   reproductor.boton['cancionSiguiente'].addEventListener('click', () => cargarCancion(1));
   reproductor.boton['cancionAnterior'].addEventListener('click', () => cargarCancion(-1));
@@ -201,7 +204,7 @@ function cargarCancion(sentido){
   let cambiarA = reproduciendo + sentido;
   reproductor.caratula.classList.add('oculto');
   reproductor.covers.classList.add('oculto');
-
+  
   if(cambiarA >= listadoCanciones.length) reproduciendo = 0;
   else if(cambiarA < 0) reproduciendo = listadoCanciones.length - 1;
   else reproduciendo = cambiarA;
@@ -209,6 +212,7 @@ function cargarCancion(sentido){
   cancion.URI = uris.musica + listadoCanciones[reproduciendo] + '.mp3';
   cancion.caratula = uris.caratula + listadoCanciones[reproduciendo] + '.png';
   cancion.covers = uris.covers + listadoCanciones[reproduciendo] + '.png';
+
   cancion.audio.src = cancion.URI;
 
   reproductor.caratula.src = cancion.caratula;
@@ -233,6 +237,9 @@ function cambiarCancion(){
   document.querySelector('.emision-date').innerText = emisionDate[reproduciendo];
   document.querySelector('.episode-duration').innerText = episodeDuration[reproduciendo];
   document.querySelector('.episode-numb').innerText = episodeNumber[reproduciendo];
+  document.querySelector ('.stream-spotify').href = spotiUrl[reproduciendo];
+  document.querySelector ('.stream-google').href = gpUrl[reproduciendo];
+
   
   if(reproductor.boton['reproducirPausa'].firstChild.classList.contains(icono['pausa'])) cancion.audio.play();
 }
@@ -295,17 +302,4 @@ function moverVolumen(e){
   else iconoVolumen.className = icono['volumenAlto'];
 }
 
-//ARRIBA BTN
-$('.ir-arriba').click(function(){
-  $('body, html').animate({
-    scrollTop: '0px'
-  },1800);
-});
 
-$(window).scroll(function(){
-  if( $(this).scrollTop() > 798 ){
-    $('.ir-arriba').slideDown(300);
-  } else {
-    $('.ir-arriba').slideUp(300);
-  }
-});
