@@ -1,0 +1,124 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>KD-Challenges | Actividad </title>
+  <meta name="description" content="game">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="stylesheet" href="/KD_game/css/normalize.css">
+  <link rel="stylesheet" href="/KD_game/css/estilos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  
+
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#fafafa">
+
+  <audio id="sonido_btn" src="/KD_game/audio/interface.mp3" autostart="false"></audio>
+  <audio src="/KD_game/audio/soft-bells.mp3" autoplay="autoplay"></audio>
+
+
+</head>
+
+<body>
+
+        <div class="loader loader--active">
+                  <div class="loader__icon">
+                        <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
+                          <path opacity="0.2" fill="#000" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"></path>
+                          <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0C22.32,8.481,24.301,9.057,26.013,10.047z"></path>
+                          <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 20 20" to="360 20 20" dur="0.5s" repeatCount="indefinite"></animateTransform>
+                        </svg>
+                  </div>
+                  <div class="loader__tile orange"></div>
+                  <div class="loader__tile orange"></div>
+                  <div class="loader__tile orange"></div>
+                  <div class="loader__tile orange"></div>
+                  <div class="loader__tile orange"></div>
+        </div>
+        <div class="wrapper">
+            
+                    <header> 
+                        <a href="index.html" target="_self">
+                        <svg width="37" height="37" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 18.5L6.44444 15.0556M6.44444 15.0556L18.5 3L30.5556 15.0556M6.44444 15.0556V32.2778C6.44444 33.229 7.21552 34 8.16667 34H13.3333M30.5556 15.0556L34 18.5M30.5556 15.0556V32.2778C30.5556 33.229 29.7845 34 28.8333 34H23.6667M13.3333 34C14.2845 34 15.0556 33.229 15.0556 32.2778V25.3889C15.0556 24.4377 15.8266 23.6667 16.7778 23.6667H20.2222C21.1734 23.6667 21.9444 24.4377 21.9444 25.3889V32.2778C21.9444 33.229 22.7155 34 23.6667 34M13.3333 34H23.6667" stroke="#FF13A1" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>                            
+                        </a>
+                        <img src="img/game-logo.png">
+                    </header>
+
+
+                    <div class="text_games">
+                        <h1 class="h1-orange">It's time to...</h1>
+                        <p>  ¿Qué actividad nos tocará desarrollar?...Selecciona una card para descubrirlo. </p>                       
+                    </div>
+
+                    <div class="rows" id="fivecol"> <span> 1 </span> <span> 2 </span> <span> 3 </span> <span> 4 </span> <span> 5 </span> </div>
+                    
+                    <ul class="scene list">
+                        <li id="a1" class="card" onclick="play('sonido_btn')">
+                          <div class="card__face card__face--front"><img src="img/letras_KD.png"></div>
+                          <div class="card__face card__face--back" id="podcast"></div>
+                        </li>
+
+                        <li id="a2" class="card" onclick="play('sonido_btn')">
+                            <div class="card__face card__face--front"><img src="img/letras_KD.png"></div>
+                            <div class="card__face card__face--back" id="draws">
+                              <a href="tema_draw.html"><svg fill="#fff" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                                  viewBox="0 0 414.287 414.287"
+                                  xml:space="preserve">
+                                <g>
+                                  <path d="M412.398,202.993L288.535,95.289c-1.502-1.305-3.591-1.699-5.463-1.027c-1.873,0.67-3.237,2.3-3.568,4.261l-8.938,52.887
+                                    H40.554c-2.684,0-4.976,1.938-5.423,4.583l-3.054,18.067c-0.27,1.597,0.177,3.23,1.223,4.467c1.045,1.237,2.581,1.95,4.2,1.95
+                                    h103.982l-2.208,15H8.134c-2.684,0-4.976,1.938-5.423,4.583l-2.634,15.584c-0.27,1.597,0.177,3.229,1.223,4.467
+                                    c1.045,1.236,2.581,1.949,4.2,1.949h159.196l-2.206,15H63.505c-2.684,0-4.976,1.938-5.423,4.583l-2.505,14.817
+                                    c-0.271,1.597,0.177,3.229,1.222,4.467c1.046,1.237,2.582,1.95,4.201,1.95h190.721l-8.628,51.053
+                                    c-0.366,2.168,0.593,4.346,2.439,5.538c0.908,0.586,1.945,0.879,2.982,0.879c1.07,0,2.141-0.312,3.067-0.935l160.272-107.704
+                                    c1.421-0.955,2.316-2.518,2.422-4.225C414.385,205.776,413.689,204.116,412.398,202.993z"/>
+                                </g>
+                                </svg>
+                              </a>
+                            </div>
+                        </li>
+
+                        <li  id="a3" class="card" onclick="play('sonido_btn')">
+                            <div class="card__face card__face--front"><img src="img/letras_KD.png"></div>
+                            <div class="card__face card__face--back" id="tryagain"></div>
+                        </li>
+
+                        <li  id="a4" class="card" onclick="play('sonido_btn')">
+                            <div class="card__face card__face--front"><img src="img/letras_KD.png"></div>
+                            <div class="card__face card__face--back" id="storytelling"></div>
+                        </li>
+
+                        <li  id="a5" class="card" onclick="play('sonido_btn')">
+                            <div class="card__face card__face--front"><img src="img/letras_KD.png"></div>
+                            <div class="card__face card__face--back" id="tryagain2"></div>
+                        </li>
+
+                      </ul>
+                      
+                    
+                    <div class="btn"><a href="tema.html">Continuar</a></div>
+                    <div class="overlay"></div>
+                    
+      
+        </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+  <script src="js/vendor/modernizr-3.12.0.min.js"></script>
+  <script src="js/javs.js"></script> 
+
+</body>
+
+</html>

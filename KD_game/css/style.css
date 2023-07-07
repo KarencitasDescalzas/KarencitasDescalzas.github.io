@@ -1,0 +1,546 @@
+/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+ @font-face {
+  font-family: 'Gameplay';
+  src: url('/KD_game/fonts/Gameplay.woff2') format('woff2'),
+      url('/KD_game/fonts/Gameplay.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* @import url(https://fonts.googleapis.com/css?family=Nunito:400,700,300);*/
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+ 
+   *
+   :before,
+   :after {
+     box-sizing: border-box;
+     padding: 0;
+     margin: 0;
+   }
+   .hide {
+     display: none;
+   }
+   .page__style {
+     position: fixed;
+     top: 0;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     height: 100%;
+     width: 100%;
+     margin: auto auto;
+     overflow: hidden;
+   }
+   .page__style .page__description {
+     color: #fff;
+     font-weight: 300;
+     text-align: center;
+   }
+   .page__style h1 {
+     font-weight: 300;
+     margin-bottom: 30px;
+   }
+   /*.page__style .btn_nav {
+     background: #002a32;
+     border-radius: 30px;
+     border: none;
+     color: #fff;
+     cursor: pointer;
+     font-family: inherit;
+     font-size: 15px;
+     font-weight: bold;
+     text-transform: uppercase;
+     letter-spacing: 1px;
+     margin-bottom: 20px;
+     padding: 17px 30px;
+     width: 146px;
+   }*/
+   .page__style .btn_nav:focus,
+   .page__style .btn_nav:active {
+     outline: none;
+   }
+  
+   .animate_content {
+     animation: animate 3s ease;
+   }
+   .fadeIn {
+     z-index: 30;
+   }
+   /*  home
+   -----------------------------------*/
+   .home {
+    background: url(../img/backg_kdgame.png) no-repeat;
+    background-size: 100%;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-position: center -80px;
+   }
+   /*  letsgo
+   -----------------------------------*/
+   .projects {
+    background: url(../img/bg_intro.png) no-repeat;
+    background-size: 100%;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-position: center -80px;
+   }
+   /*  Skills
+   -----------------------------------*/
+   .skills {
+     background: #5de974;
+   }
+   /*  About
+   -----------------------------------*/
+   .about {
+     background: #fb9b33;
+   }
+   /*  Contact
+   -----------------------------------*/
+   .contact {
+     background: #c9cdc0;
+   }
+   /*****************************************************************
+   ~ Mobile media-queries (max-width: 767px)
+   ******************************************************************/
+   @media only screen and (max-width: 767px) {
+     .page__description h1 {
+       margin-top: 100px;
+     }
+   }
+   @-moz-keyframes animate {
+     10% {
+       transform: scale(1, 0.002);
+     }
+     35% {
+       transform: scale(0.2, 0.002);
+       opacity: 1;
+     }
+     50% {
+       transform: scale(0.2, 0.002);
+       opacity: 0;
+     }
+     85% {
+       transform: scale(1, 0.002);
+       opacity: 1;
+     }
+     100% {
+       transform: scale(1, 1);
+     }
+   }
+   @-webkit-keyframes animate {
+     10% {
+       transform: scale(1, 0.002);
+     }
+     35% {
+       transform: scale(0.2, 0.002);
+       opacity: 1;
+     }
+     50% {
+       transform: scale(0.2, 0.002);
+       opacity: 0;
+     }
+     85% {
+       transform: scale(1, 0.002);
+       opacity: 1;
+     }
+     100% {
+       transform: scale(1, 1);
+     }
+   }
+   @-o-keyframes animate {
+     10% {
+       transform: scale(1, 0.002);
+     }
+     35% {
+       transform: scale(0.2, 0.002);
+       opacity: 1;
+     }
+     50% {
+       transform: scale(0.2, 0.002);
+       opacity: 0;
+     }
+     85% {
+       transform: scale(1, 0.002);
+       opacity: 1;
+     }
+     100% {
+       transform: scale(1, 1);
+     }
+   }
+   @keyframes animate {
+     10% {
+       transform: scale(1, 0.002);
+     }
+     35% {
+       transform: scale(0.2, 0.002);
+       opacity: 1;
+     }
+     50% {
+       transform: scale(0.2, 0.002);
+       opacity: 0;
+     }
+     85% {
+       transform: scale(1, 0.002);
+       opacity: 1;
+     }
+     100% {
+       transform: scale(1, 1);
+     }
+   }
+
+/*.bg_game{
+ background: url(../img/backg_kdgame.png) no-repeat;
+ background-size: 100%;
+ width: 100vw;
+ height: 100vh;
+ overflow: hidden;
+ background-position: center -80px;
+ 
+}*/
+
+.overlay{
+  background: linear-gradient(black, transparent);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  position: absolute;
+  z-index: 0;
+}
+
+#Logotype{
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  margin-top: 200px;
+  z-index: 5;
+
+}
+
+#Logotype img{
+  width: 800px;
+  text-align: center;
+  padding-left: 30%;
+  padding-right: 30%;
+}
+
+h1 {
+  font-family: 'Gameplay';
+  font-size: 80px;
+  text-transform: uppercase;
+  color: white;
+  width: 100%;
+  text-align:center;
+  z-index: 5;
+  position: relative;
+
+
+}
+
+/*a {
+  font-family: 'Gameplay';
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  text-align: center;
+  width: 100%;
+  
+}*/
+
+
+
+.btn{
+  width: 200px;
+  display:inline-flex;
+  align-items: center;
+  background-color: #FF8103;
+  height: 50px;
+  position:relative;
+  bottom: 25%;
+  border-radius: 30px;
+  margin-left:45%;
+  margin-right: 45%;
+  z-index: 10;
+  color: #fff;
+     cursor: pointer;
+     font-family: 'Gameplay';
+     font-size: 15px;
+     font-weight: bold;
+     text-transform: uppercase;
+
+}
+
+.btn:hover {
+  background-color: #FF13A1;
+}
+
+p{
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#subtitle{
+  color:#33C28F;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .visually-hidden class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * The use of `table` rather than `block` is only necessary if using
+ * `::before` to contain the top-margins of child elements.
+ */
+
+.clearfix::before,
+.clearfix::after {
+  content: "";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
