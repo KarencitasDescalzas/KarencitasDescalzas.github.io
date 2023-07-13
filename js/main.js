@@ -133,22 +133,22 @@ $(document).ready(function () {
 //Reproductor episodios
 window.addEventListener('load', iniciarReproductor);
 
-let idFrame, listadoCanciones = ['Tierra Hueca','Gastronomía Mexa', 'Espíritus Chocarreros',
-                                  'Muerte Mundana', 'Estación trabajo Para Ayer'];
-let episodioDescripciones = ['¿Han escuchado hablar de la posibilidad de que la Tierra sea hueca? En este episodio exponemos algunas teorías que estudiaron esta posibilidad, así como a los valientes hombres que se atrevieron a pensar más allá y emprendieron su viaje a lo desconocido para descubrir y demostrar dichas creencias.',
+let idFrame, listadoCanciones = ['Misterios del Océ-ano Profundo','Tierra Hueca','Gastronomía Mexa', 'Espíritus Chocarreros',
+                                  'Muerte Mundana'];
+let episodioDescripciones = ['¿Se han preguntado qué misterios podrían esconder las profundidades marinas?En este episodio estaremos platicando sobre el suceso del sumergible Titán, además de  resumir y conversar un filme cinematográfico de ciencia ficción referente al tema del fondo oceánico',
+'¿Han escuchado hablar de la posibilidad de que la Tierra sea hueca? En este episodio exponemos algunas teorías que estudiaron esta posibilidad, así como a los valientes hombres que se atrevieron a pensar más allá y emprendieron su viaje a lo desconocido para descubrir y demostrar dichas creencias.',
 'Uno de los placeres más ricos de la vida es la comida... y una muestra de ello es el delicioso sazón que tiene la gastronomía mexicana, es por eso que en este episodio las karencitas le queremos rendir homenaje platicando sobre los orígenes, platillos representativos y una que otra anécdota sobre la comida orgullosamente mexa.',
 '¿Alguna vez se han preguntado que pasa después de que morimos? En este episodio, las karencitas ponemos sobre la mesa nuestras opiniones y creencias acerca del karma, la existencia de los espíritus chocarreros y si nos quedamos vagando aquí en la tierra o que pasa en esta transición al morir.',
-'¿Se han preguntado que hacer con su cuerpo después de morir? Las karencitas nos hemos planteado esa y otras preguntas relacionadas a la muerte mundana como la conocemos. Acompáñanos en este episodio donde ponemos sobre la mesa nuestras opiniones e intercambiamos puntos de vista al respecto.',
-'Acompáñanos en este episodio a escuchar algunas tristes historias al conseguir trabajo, lo que nos molesta y algunos tips que te pueden servir a la hora de buscar empleo; además, descubre parte de nuestras experiencias laborales como diseñadoras gráficas.'];
+'¿Se han preguntado que hacer con su cuerpo después de morir? Las karencitas nos hemos planteado esa y otras preguntas relacionadas a la muerte mundana como la conocemos. Acompáñanos en este episodio donde ponemos sobre la mesa nuestras opiniones e intercambiamos puntos de vista al respecto.'];
 
-let episodioAcotaciones = ['No solo es ciencia ficción... ¿O sí?','Acompáñanos en este delicioso episodio.','No te lo pierdas','No dejen para mañana lo que pueden hacer hoy.','¿Estás listo? ¡Bienvenido!'];                             
-let emisionDate = ['30 junio 2023','16 junio 2023','02 junio 2023', '19 mayo 2023', '07 mayo 2023'];
-let episodeDuration = ['24 min','32 min', '30 min', '28 min', '40 min',];
-let episodeNumber = ['E8','E7', 'E6', 'E5', 'E4',];
-let spotiUrl = ['https://open.spotify.com/episode/3mcU07xEf0BPAdrUJcqmLZ','https://open.spotify.com/episode/5wKKXscAoOwiGM3ARtZVAo', 'https://open.spotify.com/episode/6630kdfTP3BDFYMKlqYLDC', 'https://open.spotify.com/episode/58f9j6256kBIJjjDnrfShL', 'https://open.spotify.com/episode/0BRrEFGcJiQW2CvgYkw5Uv'];
-let gpUrl = ['https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy85MDJiNDIzNC9wb2RjYXN0L3Jzcw/episode/N2IyMTZlMjQtNTdkNC00MzI4LWExMzktZDkyM2RiMWIxMDBk?sa=X&ved=0CAUQkfYCahcKEwjQlMe_-vX_AhUAAAAAHQAAAAAQLA','https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy85MDJiNDIzNC9wb2RjYXN0L3Jzcw/episode/NDUyMzY4ZGEtMDRlMy00MzMxLTk3OWYtYzIwYjQ1ZTU2NGQ0?sa=X&ved=0CAUQkfYCahcKEwjQlMe_-vX_AhUAAAAAHQAAAAAQLA', 
-'https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy85MDJiNDIzNC9wb2RjYXN0L3Jzcw/episode/ZGRkZjdkMDctN2Q3NS00OTY5LThmOTgtNzMyNzQ3NmVjMjMz?sa=X&ved=0CAUQkfYCahcKEwjQlMe_-vX_AhUAAAAAHQAAAAAQLA', 'https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy85MDJiNDIzNC9wb2RjYXN0L3Jzcw/episode/MzA0ZjlkM2YtNWY5My00N2ExLWE1NjAtNjBlOGM0ZWY1MWMy?sa=X&ved=0CAUQkfYCahcKEwjQlMe_-vX_AhUAAAAAHQAAAAAQLA', 
-'https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy85MDJiNDIzNC9wb2RjYXN0L3Jzcw/episode/OTE5MjU4OTItYzZiYS00OGQwLWIzMDQtYjZlYjNjNTczZWUx?sa=X&ved=0CAUQkfYCahcKEwjQlMe_-vX_AhUAAAAAHQAAAAAQLA'];
+let episodioAcotaciones = ['¡No te lo pierdas!','No solo es ciencia ficción... ¿O sí?','Acompáñanos en este delicioso episodio.','No te lo pierdas','No dejen para mañana lo que pueden hacer hoy.'];                             
+let emisionDate = ['07 julio 2023','30 junio 2023','16 junio 2023','02 junio 2023', '19 mayo 2023'];
+let episodeDuration = ['42 min','24 min','32 min', '30 min', '28 min'];
+let episodeNumber = ['E9','E8','E7', 'E6', 'E5'];
+let spotiUrl = ['https://open.spotify.com/episode/3LJjijYrN0JSlVydIRZbXU','https://open.spotify.com/episode/3mcU07xEf0BPAdrUJcqmLZ','https://open.spotify.com/episode/5wKKXscAoOwiGM3ARtZVAo', 'https://open.spotify.com/episode/6630kdfTP3BDFYMKlqYLDC', 'https://open.spotify.com/episode/58f9j6256kBIJjjDnrfShL'];
+let gpUrl = ['https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy85MDJiNDIzNC9wb2RjYXN0L3Jzcw/episode/Yjk4NDMxYWEtZmU5Yy00YTAzLTk2YzQtZDFlMGRjZDhlMTZh?sa=X&ved=0CAUQkfYCahcKEwiwrLzEoIyAAxUAAAAAHQAAAAAQLA',
+'https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy85MDJiNDIzNC9wb2RjYXN0L3Jzcw/episode/N2IyMTZlMjQtNTdkNC00MzI4LWExMzktZDkyM2RiMWIxMDBk?sa=X&ved=0CAUQkfYCahcKEwjQlMe_-vX_AhUAAAAAHQAAAAAQLA','https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy85MDJiNDIzNC9wb2RjYXN0L3Jzcw/episode/NDUyMzY4ZGEtMDRlMy00MzMxLTk3OWYtYzIwYjQ1ZTU2NGQ0?sa=X&ved=0CAUQkfYCahcKEwjQlMe_-vX_AhUAAAAAHQAAAAAQLA', 
+'https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy85MDJiNDIzNC9wb2RjYXN0L3Jzcw/episode/ZGRkZjdkMDctN2Q3NS00OTY5LThmOTgtNzMyNzQ3NmVjMjMz?sa=X&ved=0CAUQkfYCahcKEwjQlMe_-vX_AhUAAAAAHQAAAAAQLA', 'https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy85MDJiNDIzNC9wb2RjYXN0L3Jzcw/episode/MzA0ZjlkM2YtNWY5My00N2ExLWE1NjAtNjBlOGM0ZWY1MWMy?sa=X&ved=0CAUQkfYCahcKEwjQlMe_-vX_AhUAAAAAHQAAAAAQLA'];
 let icono = [], uris = {musica: 'img/episodios/audios/', caratula: 'img/episodios/covers/', covers: 'img/episodios/covers/'},reproduciendo = 0;
 let cancion = {
   audio: new Audio(),
