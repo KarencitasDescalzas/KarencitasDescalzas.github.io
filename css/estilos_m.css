@@ -174,7 +174,7 @@ textarea {
    .menu{height: 100%;}
    .menu ul{display: inline-flex; justify-content: flex-start; align-items: center; width: 100%; height: 100%; margin: 0; padding: 0;}   
    .menu ul li{height: 100%; display: flex; justify-content: center;align-items: center;}
-   .menu ul li a{ text-decoration: none;font-family: 'Bebas Neue', sans-serif; letter-spacing:3px; color: white;transition: color 1s ease-in-out;}
+   .menu ul li a{ text-decoration: none;font-family: 'Bebas Neue', sans-serif; letter-spacing:3px; color: #605E5E;transition: color 1s ease-in-out;}
    .menu ul li a:hover{color: #FF8103;}
 
 
