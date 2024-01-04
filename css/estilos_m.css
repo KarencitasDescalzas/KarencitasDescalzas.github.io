@@ -174,13 +174,13 @@ textarea {
    .menu{height: 100%;}
    .menu ul{display: inline-flex; justify-content: flex-start; align-items: center; width: 100%; height: 100%; margin: 0; padding: 0;}   
    .menu ul li{height: 100%; display: flex; justify-content: center;align-items: center;}
-   .menu ul li a{ text-decoration: none;font-family: 'Bebas Neue', sans-serif; letter-spacing:3px; color: #131313;transition: color 1s ease-in-out;}
+   .menu ul li a{ text-decoration: none;font-family: 'Bebas Neue', sans-serif; letter-spacing:3px; color: white;transition: color 1s ease-in-out;}
    .menu ul li a:hover{color: #FF8103;}
 
 
-#principal{ background: url(../img/bg_webKD.png) no-repeat; width: 100%;background-size: cover;  position: relative;}
+#principal{ background: url(../img/bg_principal.png) no-repeat; width: 100%;background-size: cover;  position: relative;}
 #trailer {display: flex; justify-content: center;}
-#trailer_button{ width: 100%;display: flex; justify-content:center; filter: drop-shadow(2px 3px 8px rgba(0,0,0,.3));}
+#trailer_button{ width: 100%;display: flex; justify-content:center; filter: drop-shadow(2px 3px 8px rgba(0,0,0,.3)) ; mix-blend-mode: lighten;}
 #trailer_button:hover{cursor: pointer; filter: drop-shadow(2px 3px 8px rgba(255,19,161,.5));}
 .sound-wave {display: flex;align-items: center;justify-content: center;}
 .bar {animation-name: wave-lg;
@@ -674,7 +674,7 @@ textarea {
 #bg_about{
   width: 100%;
   height:100vh;
-  background: url(../img/bg.png) no-repeat;
+  background: url(../img/bg_psy.png) no-repeat;
   background-size: cover;
   z-index: 1;
   position: absolute;
@@ -693,7 +693,7 @@ textarea {
 .podcasters-name{
   background: black;
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   color: white;
   font-family: 'Anton', sans-serif;
   text-transform: uppercase;
@@ -934,15 +934,14 @@ color: #FF8103;
     #about .txt-content{top: 3rem;  width: 70%;}
     .txt-content .title{font-size:45px;}   
     #bg_about{background-position:left;}
-    .podcasters{width:auto;height: 300px;}
-    .title span{ background: -webkit-linear-gradient(360deg, rgba(148,39,144,1) 0%, rgba(255,19,161,1) 50%, rgba(255,129,3,1) 100%);
+    .podcasters{width:auto;height: 450px;}
+    .title span{ background: -webkit-linear-gradient(360deg, rgba(255,19,161,1) 0%, rgba(255,129,3,1) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     background-clip: text;} 
     .podcasters-name{width: 110px;height: 50px;border-radius: 30px 0px 30px 0px;font-size:18px;letter-spacing:4px;}
-    #kalid{left:0; bottom:37%;}
-    #kaly{bottom:37%; left:3%;}
-    #nina{right:0%; bottom:37%;}
+     #kaly{bottom:6rem;left:-12rem;}
+    #nina{right:3rem; bottom: 6rem;}
 
     #contacto{display:flex;justify-content: center;flex-direction:column;} 
     #contacto .txt_action{width: 100%;height:50%;}
@@ -973,7 +972,7 @@ color: #FF8103;
     #identidad{ width:100%; height: 50%;}
     .content{ width:80%; padding-top:0; justify-content: center;align-items: center;}
     #logotype{justify-content: center;align-items: center;}
-    #logotype img{ width: 65%;}
+    #logotype img{ width: 68%;}
     .content .txt_w {font-size: 18px; width: 100%;}
     #stream a{ width: 30%;}
 
@@ -1032,9 +1031,8 @@ color: #FF8103;
       -webkit-text-fill-color: transparent;
     background-clip: text;} 
     .podcasters-name{width: 130px;height: 50px;border-radius: 30px 0px 30px 0px;font-size:18px;letter-spacing:6px;}
-    #kalid{left:2%; bottom:45%;}
-    #kaly{bottom:50%; left:3%;}
-    #nina{right:2%; bottom:45%;}
+    #kaly{bottom:12rem;left:-20rem;}
+    #nina{right:10rem; bottom: 12rem;}
 
     #contacto{display:flex;justify-content: center;flex-direction:column;} 
     #contacto .txt_action{width: 100%;height:50%;}
@@ -1128,8 +1126,8 @@ color: #FF8103;
     background-clip: text;} 
     .podcasters-name{width: 200px;height: 70px;border-radius: 80px 0px 80px 0px;font-size:25px;letter-spacing: 10px;}
     #kalid{left:2%; bottom:3rem;}
-    #kaly{bottom:0;left: 0;}
-    #nina{right: 1%; bottom: 10rem;}
+    #kaly{bottom:3rem;left:-20rem;}
+    #nina{right:37rem; bottom: 3rem;}
 
     #contacto{display: inline-flex;justify-content: flex-start;flex-direction: row;}
     #contacto .txt_action{width: 50%;height: 100%;}
@@ -1219,15 +1217,14 @@ color: #FF8103;
     #about .txt-content{top: 0; width: 70%;}
     .txt-content .title{font-size: 100px;}
     #bg_about{background-position: center;}
-    .podcasters{width: 65%;height:auto;}
+    .podcasters{width: 42%;height:auto;}
     .title span{ background: -webkit-linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,1) 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     background-clip: text;} 
     .podcasters-name{width: 300px;height: 70px;border-radius: 80px 0px 80px 0px;font-size: 34px;letter-spacing: 10px;}
-    #kalid{left: 12%; bottom:60px;}
-    #kaly{bottom:0;left: 0;}
-    #nina{right: 9%; bottom: 5rem;}
+    #kaly{bottom:3rem;left:-20rem;}
+    #nina{right:37rem; bottom: 3rem;}
 
     #contacto{display: inline-flex;justify-content: flex-start;flex-direction: row;}
     #contacto .txt_action{width: 50%;height: 100%;}
