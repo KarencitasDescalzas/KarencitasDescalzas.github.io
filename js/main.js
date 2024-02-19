@@ -133,22 +133,22 @@ $(document).ready(function () {
 //Reproductor episodios
 window.addEventListener('load', iniciarReproductor);
 
-let idFrame, listadoCanciones = ['Misterios del Océ-ano Profundo','Tierra Hueca','Gastronomía Mexa', 'Espíritus Chocarreros',
-                                  'Muerte Mundana'];
-let episodioDescripciones = ['¿Se han preguntado qué misterios podrían esconder las profundidades marinas?En este episodio estaremos platicando sobre el suceso del sumergible Titán, además de  resumir y conversar un filme cinematográfico de ciencia ficción referente al tema del fondo oceánico',
-'¿Han escuchado hablar de la posibilidad de que la Tierra sea hueca? En este episodio exponemos algunas teorías que estudiaron esta posibilidad, así como a los valientes hombres que se atrevieron a pensar más allá y emprendieron su viaje a lo desconocido para descubrir y demostrar dichas creencias.',
-'Uno de los placeres más ricos de la vida es la comida... y una muestra de ello es el delicioso sazón que tiene la gastronomía mexicana, es por eso que en este episodio las karencitas le queremos rendir homenaje platicando sobre los orígenes, platillos representativos y una que otra anécdota sobre la comida orgullosamente mexa.',
-'¿Alguna vez se han preguntado que pasa después de que morimos? En este episodio, las karencitas ponemos sobre la mesa nuestras opiniones y creencias acerca del karma, la existencia de los espíritus chocarreros y si nos quedamos vagando aquí en la tierra o que pasa en esta transición al morir.',
-'¿Se han preguntado que hacer con su cuerpo después de morir? Las karencitas nos hemos planteado esa y otras preguntas relacionadas a la muerte mundana como la conocemos. Acompáñanos en este episodio donde ponemos sobre la mesa nuestras opiniones e intercambiamos puntos de vista al respecto.'];
+let idFrame, listadoCanciones = ['Ocultismo','Esoterismo no es magia','Tradiciones Mexas', 'Halloween y otras historias',
+                                  'Íncubos y Súcubos'];
+let episodioDescripciones = ['En este episodio 17 de la segunda temporada desentrañamos los misterios que rodean la palabra Ocultismo. Además de algunos personajes interesantes como Pachita y algunos otros referentes a este tema como Madame Blavatsky.',
+'Sí o si alguna vez hemos escuchado la palabra Esoterismo, y esta regularmente tiende a ser relacionada con algo mágico, hasta con los amarres y algo más... jajaja pero no.',
+'Este mes al igual que septiembre es especial para cualquier mexicano y cómo no serlo si tenemos el gusto y placer de volver a honrar, platicar, visitar y tener presentes a nuestros queridísimos muertitos.',
+'Es 31 de Octubre y no podíamos dejar pasar la festividad más "Monstruosa" del año 🧝‍🧟‍♀️. Esperada por muchos... ¡Halloween ya está aquí! 🎃 Y las Karencitas nos echamos un round charlando sobre ello (y otras historias como un plus).',
+'Acompáñanos en este episodio 13 de la 2da temporada donde estaremos comentando un tema algo picoso, exótico y sensual... los íncubos y súcubos, también conocidos como demonios sexuales, ¿Quiénes son?, ¿De dónde provienen?'];
 
-let episodioAcotaciones = ['¡No te lo pierdas!','No solo es ciencia ficción... ¿O sí?','Acompáñanos en este delicioso episodio.','No te lo pierdas','No dejen para mañana lo que pueden hacer hoy.'];                             
-let emisionDate = ['07 julio 2023','30 junio 2023','16 junio 2023','02 junio 2023', '19 mayo 2023'];
-let episodeDuration = ['42 min','24 min','32 min', '30 min', '28 min'];
-let episodeNumber = ['E9','E8','E7', 'E6', 'E5'];
-let spotiUrl = ['https://open.spotify.com/episode/3LJjijYrN0JSlVydIRZbXU','https://open.spotify.com/episode/3mcU07xEf0BPAdrUJcqmLZ','https://open.spotify.com/episode/5wKKXscAoOwiGM3ARtZVAo', 'https://open.spotify.com/episode/6630kdfTP3BDFYMKlqYLDC', 'https://open.spotify.com/episode/58f9j6256kBIJjjDnrfShL'];
-let gpUrl = ['https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy85MDJiNDIzNC9wb2RjYXN0L3Jzcw/episode/Yjk4NDMxYWEtZmU5Yy00YTAzLTk2YzQtZDFlMGRjZDhlMTZh?sa=X&ved=0CAUQkfYCahcKEwiwrLzEoIyAAxUAAAAAHQAAAAAQLA',
-'https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy85MDJiNDIzNC9wb2RjYXN0L3Jzcw/episode/N2IyMTZlMjQtNTdkNC00MzI4LWExMzktZDkyM2RiMWIxMDBk?sa=X&ved=0CAUQkfYCahcKEwjQlMe_-vX_AhUAAAAAHQAAAAAQLA','https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy85MDJiNDIzNC9wb2RjYXN0L3Jzcw/episode/NDUyMzY4ZGEtMDRlMy00MzMxLTk3OWYtYzIwYjQ1ZTU2NGQ0?sa=X&ved=0CAUQkfYCahcKEwjQlMe_-vX_AhUAAAAAHQAAAAAQLA', 
-'https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy85MDJiNDIzNC9wb2RjYXN0L3Jzcw/episode/ZGRkZjdkMDctN2Q3NS00OTY5LThmOTgtNzMyNzQ3NmVjMjMz?sa=X&ved=0CAUQkfYCahcKEwjQlMe_-vX_AhUAAAAAHQAAAAAQLA', 'https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy85MDJiNDIzNC9wb2RjYXN0L3Jzcw/episode/MzA0ZjlkM2YtNWY5My00N2ExLWE1NjAtNjBlOGM0ZWY1MWMy?sa=X&ved=0CAUQkfYCahcKEwjQlMe_-vX_AhUAAAAAHQAAAAAQLA'];
+let episodioAcotaciones = ['¡No te lo pierdas!','En este episodio 16 de nuestra segunda temporada descubre junto a las Karencitas el significado y origen de esta mística palabra.','Es por eso que no podemos dejar de dedicarle un episodio a nuestro mexicanísimo Día de Muertos, el 15 de nuestra 2da Temporada.','¿Dulce o Truco? Descubre los misterios que aguarda este episodio especial para ti, el 14 de nuestra 2da Temporada.','Además de las ya clásicas e imperdibles referencias a personajes y películas relacionadas.'];                             
+let emisionDate = ['29 diciembre 2023','01 diciembre 2023','07 noviembre 2023','31 octubre 2023', '07 octubre 2023'];
+let episodeDuration = ['40 min','29 min','42 min', '35 min', '36 min'];
+let episodeNumber = ['E17','E16','E15', 'E14', 'E13'];
+let spotiUrl = ['https://open.spotify.com/episode/2KRi9Q6Sng17OPEZ3WlIut?si=Lsx8TGFIQ_yucLIyhJ8u-w','https://open.spotify.com/episode/2Hau5cztMHl49C8to06UCC?si=MJhYMjcXSF6yCBVnGOnyJg','https://open.spotify.com/episode/2e29vJNVoWubg8o6tjFUK8?si=A4xpy0VKRZ2oVwf9HwNLtw', 'https://open.spotify.com/episode/0XQFjP69RIjnAMdG4AvjGV?si=SqL6Kj7cSfWB8rO30zVnrQ', 'https://open.spotify.com/episode/1ZlR6Qv4dWMLwUnaj0S47l?si=yRFhvUuzSvqxi9mXtIrN6g'];
+let ytUrl = ['',
+'','https://youtu.be/4pb1OKW1PQA?si=qiKSkCy5_PwW10ep', 
+'https://youtu.be/62m8f9TrpZU?si=tlSbQuHdhd9VD1R7', 'https://youtu.be/XkGLu4EH8JE?si=ltQZRt034UBUZlic'];
 let icono = [], uris = {musica: 'img/episodios/audios/', caratula: 'img/episodios/covers/', covers: 'img/episodios/covers/'},reproduciendo = 0;
 let cancion = {
   audio: new Audio(),
@@ -238,7 +238,7 @@ function cambiarCancion(){
   document.querySelector('.episode-duration').innerText = episodeDuration[reproduciendo];
   document.querySelector('.episode-numb').innerText = episodeNumber[reproduciendo];
   document.querySelector ('.stream-spotify').href = spotiUrl[reproduciendo];
-  document.querySelector ('.stream-google').href = gpUrl[reproduciendo];
+  document.querySelector ('.stream-youtube').href = ytUrl[reproduciendo];
 
   
   if(reproductor.boton['reproducirPausa'].firstChild.classList.contains(icono['pausa'])) cancion.audio.play();
