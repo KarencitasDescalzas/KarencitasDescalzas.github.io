@@ -14,7 +14,8 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/estilos_m.css">
   <link rel="stylesheet" href="fonts/style.css">
-  <link href="css/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
 
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#fafafa">
@@ -31,13 +32,23 @@
       </div>
     <nav class="menu">
       <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="#about">Karencitas</a></li>
+        <li><a href="#episodios">Episodios</a></li>
+        <li><a href="#" class="modal-link">Crew</a></li>
       </ul>
     </nav>
 
   </header>
+  
 
+  <div class="modal animate__animated animate__slideInRight" style="display: none;" id="crew">
+    <div class="txt-content">
+      <p class="subttwo">Las Karencitas</p>
+      <h1 class="title"> Conoce a sus <span>Podcasters</span></h1>
+    </div>
+    <p class="podcasters-name" id="nina">Nina</p>
+    <p class="podcasters-name" id="kaly">Kaly</p>
+    <a href="#" class="close">X</a>
+  </div>
 
 
 
@@ -75,11 +86,11 @@
 
   <div id="identidad">
      <div class="content">
-       <p class="subtitle"> Podcast </p>
-       <div id="logotype"><img src="img/logo_ot.svg"></div>
+       <div id="logotype"><img src="img/logo_white_2.svg"></div>
        <p class="txt_w"> 
-        Sabemos que no todos nos atrevemos a expresar lo que opinamos...
-        <br>Aquí nos gusta platicar de películas, música, diseño, historias de vida y cultura en general, brindando recomendaciones y expresando valientemente nuestros puntos de vista.
+		¿Irreverentes? tal vez, pero siempre con una buena dosis de humor.
+		<br>Por el mero gusto de recordar el pasado, resucitaremos a los clásicos y maestros que han perdurado en el tiempo y porque no, también a los contemporáneos.
+		<br> Porque...¿Quién no tiene un soundtrack que los acompañe en esta película llamada vida?
        </p>
        <div id="stream">
         <a href="https://open.spotify.com/show/4M33zgmMHtGMQY7YYmJBc0" target="_blank"><img src="img/spotify_logo 1.svg"></a>
@@ -114,120 +125,75 @@
 
 <section class="sliced">
   <div class="scroll"><div class="scroll-down"></div></div>
-  <div class="titlePink">Disfruta</div>
-  <p class="subttwo">de tus quehaceres diarios</p>
+  <div class="titlePink">Revive</div>
+  <p class="subttwo">la buena música y despierta tus sentidos auditivos</p>
 </section>
 
-<section class="sliced">
-  <div class="scroll"><div class="scroll-down"></div></div>
-  <div class="titleOrange">Escuchando</div>
-  <p class="subttwo">A las karencitas hablar de todo y con todo</p>
-</section>
-
-<section class="sliced" id="episodios">
-  <div class="scroll"><div class="scroll-down"></div></div>
-    <div class="content_80">
-      <p class="subttwo txt_black">Temporada 2</p>
-      
-      <div class="episode-player">
-
-        <div class="episode">
-
-          <p class="episode-numb"></p>
-          <div class="episode__cover">
-            <img src="" alt="portada episodio">
-            <div class="etiqueta"></div>
-          </div>
-        
-          <div class="cover__listening"><img src="" alt="episode cover"></div>
-          
-        </div><!--  /.episode -->
-  
-        <div class="episode-info">
-            <div class="emision">
-              <i class="icon-calendar_icon"></i>
-              <p class="emision-date"></p>
-              <i class="icon-clock"></i>
-              <p class="episode-duration"></p>
-            </div>
-            <div class="descripcion">
-              <p class="episode_name"></p>
-              <p class="episode-description"></p>
-              <p class="txt-bold episode-acotacion"></p> 
-            </div>
-            
-            <div class="player-reproduccion"> 
-              <div class="controles__reproduccion">
-                <button type="button"><i class="icon-play_btn"></i></button>
-                <button type="button"><i class="icon-prev_btn"></i></button>
-                <button type="button"><i class="icon-next_btn"></i></button>
-              </div>
-              <div class="progreso_volumen">
-                <div class="progreso__reproduccion">
-                  <input type="range" value="0" min="0" max="0" step="0.01" class="progress">
-                  <time>--:--/--:--</time>
-                </div>
-                <div class="controles__volumen">
-                  <input type="range" value="100" min="0" max="100" step="1" class="oculto">
-                  <button type="button" name="button"><i class="icon-volume_icon"></i></button>    
-                </div>
-              </div>   
-            </div>
-            
-        </div>
-      
-      </div><!--  /.episode-player -->
-
-      <div class="stream_extern">
-        <p>Disfruta el episodio completo en:</p>
-        <div class="platforms">
-          <a href="" class="stream-spotify" target="_blank">
-            <img src="img/icon_spotify.svg">
-            <p class="hover_stream">Spotify</p>
-          </a>
-          <a href="" class="stream-youtube" target="_blank">
-            <img src="img/icon_youtube.svg">
-            <p class="hover_stream">Youtube</p>
-          </a>
-        </div>
-      </div>
+<section id="episodios">
+	<div id="container">
     
-    </div><!--  /.content80 -->
+    
+		<input hidden type="radio" name="carousel-control" id="button_a" checked/>
+		<!--<input hidden type="radio" name="carousel-control" id="button_b"/>
+		<input hidden type="radio" name="carousel-control" id="button_c"/>
+		<input hidden type="radio" name="carousel-control" id="button_d"/>
+    <input hidden type="radio" name="carousel-control" id="button_e"/>
+    <input hidden type="radio" name="carousel-control" id="button_f"/>  -->          
+				
+		
+		<div id="carousel">
+			<div class="p-wrapper">
+						
+				<section class="panel_a" id="p-a">
+          <div class="episode-info">
+              <p class="season"> T1</p>
+              <span class="vertical-line"></span>
+              <p class="episode">E1</p>
+          </div>
+          <a class="slider__link" data-fancybox href="https://www.youtube.com/watch?v=SXP6gcm_MjM">
+            <i class="icon-play_btn"></i>
+        </a>
+            
+          <div class="stream">
+            <a href="https://open.spotify.com/episode/4kQDpwbCaygn8Ph9qChgJM?si=hRyEMP8yQ0y-Gs_u8CVBSQ" target="_blank"><img src="img/spotify_logo 1.svg"></a>
+           <!-- <a href="#" target="_blank"><img src="img/yt_logo.svg"></a> -->
+           </div>
+          <img class="img-episode" src="img/episodios/covers/Gentle_giant_cover.png" alt="Gentle Giant Poster Episodio">
+				</section>
+						
+			</div> <!-- // .p-wrapper -->
+		</div> <!-- // #carousel -->            
+				
+		
+		<div id="navigation">
+			<!--<label for="button_a" class="label_a"> <span class="dot"></span> </label>
+			<label for="button_b" class="label_b"> <span class="dot"></span> </label>
+			<label for="button_c" class="label_c"> <span class="dot"></span> </label>
+			<label for="button_d" class="label_d"> <span class="dot"></span> </label>
+      <label for="button_e" class="label_d"> <span class="dot"></span> </label>
+      <label for="button_f" class="label_d"> <span class="dot"></span> </label>-->
+		</div> <!-- // #navigation -->               
+				
+		
+	</div> <!-- // #container -->
+</section>
   
-    <span class="divisor"></span>
-   
-</section>
 
-<section class="sliced" id="about">
-  <div class="txt-content">
-    <p class="subttwo txt_black">Las Karencitas</p>
-    <h1 class="title"> Conoce a sus <span>Podcasters</span></h1>
-  </div>
-  <img src="img/karencitas_duo.png" class="podcasters">
-  <p class="podcasters-name" id="nina">Nina</p>
-  <p class="podcasters-name" id="kaly">Kaly</p>
-  <div id="bg_about"></div>
-</section>
-
-
-
-<section class="sliced" id="contacto">
+<section id="contacto">
   <div class="txt_action">
     <div class="txt-cta">
       <p class="subtxt">Simplemente</p>
       <p class="CTA"> Síguenos</p>
-      <p class="simple-txt">Los viernes, en este podcast quincenal donde conversamos, debatimos y raramente coincidimos en temas de cultura general.</p>
+      <p class="simple-txt">Los viernes, en este podcast quincenal donde compartimos el lado B... el lado bueno de la música 
+		<br>y lo que sabías o quizá no tanto de bandas, álbums  y sencillos; así como el buen gusto en el arte visual.</p>
     </div>
     <div class="social">
       <a href="https://www.youtube.com/@LasKarencitasDescalzas" target="_blank"><i class="icon-youtube"></i></a>
       <a href="https://www.facebook.com/KarencitasDescalzas" target="_blank"><i class="icon-facebook"></i></a>
     </div>
   </div>
-  <div class="contact-form">
-    <a href="mailto:laskarencitasdescalzas@gmail.com" class="contactbutton" target="_blank">Contáctanos</a>
-  </div>
   
-  <p class="copy"> Copyright © 2023, Las Karencitas Descalzas </p>
+  <p class="copy"> Copyright © 2024-2025, Las Karencitas Descalzas </p>
 </section>
 
 
@@ -235,6 +201,8 @@
 
 <script src="js/vendor/jquery-3.7.0.min.js"></script>
 <script src="js/vendor/modernizr-3.12.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
 <script src="js/main.js"></script>
 
 
