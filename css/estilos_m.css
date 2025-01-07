@@ -580,6 +580,7 @@ a {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  width: 100%;
 }
           
 #carousel, #navigation {
@@ -635,23 +636,23 @@ a {
 }
 
 #p-a{
-  background: url('../img/episodios/covers/Frank_zappa_cover.png') no-repeat; 
   background-size: cover;
+  background-position:center center;
 }
-#p-b{
-  background: url('../img/episodios/covers/Interpol_cover.png') no-repeat; 
+#p-b{ 
   background-size: cover;
+  background-position:center center;
 }
-#p-c{
-  background: url('../img/episodios/covers/Gentle_giant_cover.png') no-repeat; 
+#p-c{ 
   background-size: cover;
+  background-position:center center;
 }
           
 #navigation {
   display: flex;
   position: absolute;
   flex-direction: column;
-  right: 50px;
+  right: 70px;
 }
 
 [class^="label_"] {
@@ -684,7 +685,7 @@ a {
   width: 10px;
   border-radius: 50%;
 }
-.episode-info{
+/*.episode-info{
   width: 50px;
   height: auto;
   display: flex;
@@ -711,14 +712,15 @@ a {
   font-weight:700;
   letter-spacing: 3px;
   color: #FF13A1;
-}
+}*/
 
   .stream{
   position: absolute;
   padding: 10px 0;
   background: transparent;
   width: 30%;
-  display: inline-flex;
+  display:flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   z-index: 2;
@@ -928,16 +930,16 @@ a {
   #episodios .subttwo{margin-top:10px;letter-spacing: 15px;}
     
   /*Episodes playlist*/
-  .episode-info{left:42%;}
-  .stream{width: 30%; left:35%; bottom: 5rem;}
+  /*.episode-info{left:42%;}*/
+  .stream{width: 50%; left:0; top: 10rem;}
   #p-a{
-    background-position:bottom;
+    background: url('../img/episodios/covers/Hugh_Laurie_vertical.png') no-repeat;
   }
   #p-b{
-    background-position: bottom;
+    background: url('../img/episodios/covers/Frank_Zappa_vertical.png') no-repeat;
   }
   #p-c{
-    background-position: bottom;
+    background: url('../img/episodios/covers/Interpol_vertical.png') no-repeat;
   }
 
   .txt-cta .subtxt { letter-spacing:8px; font-size: 20px;}
@@ -1000,16 +1002,16 @@ a {
   #episodios .subttwo{margin-top:10px;letter-spacing: 25px;}
     
   /*Episodes playlist*/
-  .episode-info{left:30%;}
-  .stream{width: 10%; left:35%; bottom: 5rem;}
+  /*.episode-info{left:30%;}*/
+  .stream{width: 10%; left:10%; top: 15rem;}
   #p-a{
-    background-position:bottom;
+    background: url('../img/episodios/covers/Hugh_Laurie_vertical.png') no-repeat;
   }
   #p-b{
-    background-position: bottom;
+    background: url('../img/episodios/covers/Frank_Zappa_vertical.png') no-repeat;
   }
   #p-c{
-    background-position: bottom;
+    background: url('../img/episodios/covers/Interpol_vertical.png') no-repeat;
   }
 
   .txt-cta .subtxt { letter-spacing:8px; font-size: 30px;}
@@ -1073,17 +1075,17 @@ a {
   #episodios .subttwo{margin-top: 100px;letter-spacing: 15px;}
     
   /*Episodes playlist*/
-  .episode-info{left:25%;}
-  .stream{width: 30%; left:15%; bottom: 5rem;}
+  /*.episode-info{left:25%;}*/
+  .stream{width: 20%; left:10%; top: 12rem;}
 
   #p-a{
-    background-position:center;
+    background: url('../img/episodios/covers/Hugh_Laurie_cover.png') no-repeat;
   }
   #p-b{
-    background-position: center;
+    background: url('../img/episodios/covers/Frank_zappa_cover.png') no-repeat;
   }
   #p-c{
-    background-position: center;
+    background: url('../img/episodios/covers/Interpol_cover.png') no-repeat;
   }
 
   .txt-cta .subtxt {  letter-spacing: 25px; font-size: 24px;}
@@ -1149,16 +1151,16 @@ a {
   #episodios .subttwo{margin-top: 180px;letter-spacing: 30px;}
     
 
-  .episode-info{left:110px;}
-  .stream{width: 30%; left: 0; bottom: 7rem;}
+  /*.episode-info{left:110px;}*/
+  .stream{width: 20%; left: 0; top: 12rem;}
   #p-a{
-    background-position:center;
+    background: url('../img/episodios/covers/Hugh_Laurie_cover.png') no-repeat;
   }
   #p-b{
-    background-position: center;
+    background: url('../img/episodios/covers/Frank_zappa_cover.png') no-repeat;
   }
   #p-c{
-    background-position: center;
+    background: url('../img/episodios/covers/Interpol_cover.png') no-repeat;
   }
 
   .txt-cta .subtxt {  letter-spacing: 30px; font-size: 24px;}
