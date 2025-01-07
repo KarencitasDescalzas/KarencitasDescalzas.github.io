@@ -635,18 +635,7 @@ a {
   padding: 0px;
 }
 
-#p-a{
-  background-size: cover;
-  background-position:center center;
-}
-#p-b{ 
-  background-size: cover;
-  background-position:center center;
-}
-#p-c{ 
-  background-size: cover;
-  background-position:center center;
-}
+
           
 #navigation {
   display: flex;
@@ -931,15 +920,18 @@ a {
     
   /*Episodes playlist*/
   /*.episode-info{left:42%;}*/
-  .stream{width: 50%; left:0; top: 10rem;}
+  .stream{width: 50%; left:0; top: 18rem;}
   #p-a{
     background: url('../img/episodios/covers/Hugh_Laurie_vertical.png') no-repeat;
+    background-size: cover;
   }
   #p-b{
     background: url('../img/episodios/covers/Frank_Zappa_vertical.png') no-repeat;
+    background-size: cover;
   }
   #p-c{
     background: url('../img/episodios/covers/Interpol_vertical.png') no-repeat;
+    background-size: cover;
   }
 
   .txt-cta .subtxt { letter-spacing:8px; font-size: 20px;}
@@ -1003,15 +995,18 @@ a {
     
   /*Episodes playlist*/
   /*.episode-info{left:30%;}*/
-  .stream{width: 10%; left:10%; top: 15rem;}
+  .stream{width: 10%; left:10%; top: 20rem;}
   #p-a{
     background: url('../img/episodios/covers/Hugh_Laurie_vertical.png') no-repeat;
+    background-size: 100%;
   }
   #p-b{
     background: url('../img/episodios/covers/Frank_Zappa_vertical.png') no-repeat;
+    background-size: 100%;
   }
   #p-c{
     background: url('../img/episodios/covers/Interpol_vertical.png') no-repeat;
+    background-size: 100%;
   }
 
   .txt-cta .subtxt { letter-spacing:8px; font-size: 30px;}
@@ -1076,16 +1071,19 @@ a {
     
   /*Episodes playlist*/
   /*.episode-info{left:25%;}*/
-  .stream{width: 20%; left:10%; top: 12rem;}
+  .stream{width: 20%; left:3%; top: 10rem;}
 
   #p-a{
     background: url('../img/episodios/covers/Hugh_Laurie_cover.png') no-repeat;
+    background-size: 100%;
   }
   #p-b{
     background: url('../img/episodios/covers/Frank_zappa_cover.png') no-repeat;
+    background-size: 100%;
   }
   #p-c{
     background: url('../img/episodios/covers/Interpol_cover.png') no-repeat;
+    background-size: 100%;
   }
 
   .txt-cta .subtxt {  letter-spacing: 25px; font-size: 24px;}
@@ -1152,15 +1150,18 @@ a {
     
 
   /*.episode-info{left:110px;}*/
-  .stream{width: 20%; left: 0; top: 12rem;}
+  .stream{width: 20%; left: 0; top: 15rem;}
   #p-a{
     background: url('../img/episodios/covers/Hugh_Laurie_cover.png') no-repeat;
+    background-size: cover;
   }
   #p-b{
     background: url('../img/episodios/covers/Frank_zappa_cover.png') no-repeat;
+    background-size: cover;
   }
   #p-c{
     background: url('../img/episodios/covers/Interpol_cover.png') no-repeat;
+    background-size: cover;
   }
 
   .txt-cta .subtxt {  letter-spacing: 30px; font-size: 24px;}
