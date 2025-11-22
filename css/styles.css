@@ -1,0 +1,1322 @@
+/*=========================================================================
+Fuentes: tipografias utilizadas
+==========================================================================*/
+
+@import url('https://fonts.googleapis.com/css2?family=Macondo+Swash+Caps&family=Rubik+Glitch&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+/*==========================================================================
+Estilos generales
+==========================================================================*/
+:root {
+  --primary_color:#FFFFFF;
+  --secondary_color:#171717;
+  --tertiary_color:#FF13A1;
+  --quaternary_color:#939393;
+  --accent:#FD9122;
+}
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+::-moz-selection {
+  background: #f2f2f2;
+  text-shadow: none;
+}
+
+::selection {
+  background: #FF7C32;
+  text-shadow: none;
+}
+
+hr{
+  width: 30px;
+  border: none;
+  height: 5px;
+  background-color: var(--tertiary_color);
+  padding: 0;
+  margin: 5px 0;
+}
+
+audio,canvas,iframe,img,svg,video {
+  vertical-align: middle;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+a{text-decoration: none;}
+ul{list-style: none;}
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Slide animation */
+
+body{
+  font-family: "Rubik", sans-serif;
+  font-size: 14px;
+  font-weight:300;
+  color: var(--primary_color);
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  opacity: 1;
+  transform: translateX(0);
+  transition: transform 1.5s ease, opacity 0.6s ease;
+  background-color: var(--secondary_color);
+}
+/* Estado de entrada (desde la derecha) */
+body.slide-in-right {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+/* Estado de entrada (desde la izquierda, para volver) */
+body.slide-in-left {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+/* Estado de salida (hacia la izquierda) */
+body.slide-out-left {
+  transform: translateX(-100%);
+  opacity: 0.9;
+}
+
+/* Estado de salida (hacia la derecha) */
+body.slide-out-right {
+  transform: translateX(100%);
+  opacity: 0.9;
+}
+
+.clone-page {
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  transform: none !important;
+  opacity: 1 !important;
+}
+
+/* Entrada inicial 
+body.loaded {
+  opacity: 1;
+  transform: translateX(0);
+}*/
+
+
+/*==========================================================================
+  Estilos Loader
+==========================================================================*/
+#loader {
+  position: fixed;
+  inset: 0;
+  background: #0F0E0E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3099;
+  transition: opacity 0.8s ease, visibility 0.8s;
+}
+
+#loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.logo-loader {
+  width: 350px;
+  animation: pulse 1.5s infinite;
+}
+
+/*==========================================================================
+  Estilos Header
+==========================================================================*/
+
+.header {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 80%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background:url("../img/header_bg.webp") no-repeat center center;
+  background-size: cover;
+  padding: 0;
+  z-index: 999;
+}
+
+.logo {
+  height: 40px;
+  margin-left: 12rem;
+}
+
+.menu ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.menu a {
+  color: var(--primary_color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+  font-size: 12px;
+}
+
+.menu a:hover,
+nav a.active {
+  color: var(--accent);
+}
+
+.social{
+  margin-right: 12rem;
+}
+.social a {
+  color: var(--primary_color);
+  font-size: 22px;
+  margin-left: 10px;
+  text-decoration: none;
+  transition: color 0.5s ease-in-out;
+}
+.social a:hover{
+  color: var(--accent);
+  transition: color 1s ease-in-out;
+}
+
+/* Botón hamburguesa */
+.menu-toggle {
+  position: fixed;
+  right:1rem;
+  top:5rem; /* Más arriba del menú redondo */
+  width: 55px;
+  height: 55px;
+  z-index: 2000;
+  border: none;
+  border-radius: 50%;
+  background: var(--tertiary_color);
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(0,0,0,.5);
+}
+
+/* Líneas del ícono hamburguesa */
+.menu-toggle::before,
+.menu-toggle::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 26px;
+  height: 3px;
+  background: #fff;
+  transform: translateX(-50%);
+  transition: 0.3s ease;
+}
+
+.menu-toggle::before {
+  top: 20px;
+}
+
+.menu-toggle::after {
+  top: 32px;
+}
+
+/* Animación cuando se abre (X) */
+.menu-toggle.active::before {
+  transform: translateX(-50%) rotate(45deg);
+  top: 26px;
+}
+
+.menu-toggle.active::after {
+  transform: translateX(-50%) rotate(-45deg);
+  top: 26px;
+}
+
+/* Menú móvil colapsable */
+.menu-mobile {
+  height: auto;
+  max-height: 0px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  background: rgba(0,0,0,0.5);
+  padding:0;
+  position: absolute;
+  z-index: 9999;
+  right: 1rem;
+  top:9rem;
+  border-radius: 10px; 
+}
+
+/* Cuando está abierto */
+.menu-mobile.open {
+  max-height: 430px; /* Ajusta según tu cantidad de íconos */
+  padding: 10px;
+  right:0.5rem;
+}
+
+.menu-mobile ul {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.menu-mobile a {
+    width: 55px;
+    height: 55px;
+    background: var(--tertiary_color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 15px rgba(0,0,0,.35);
+}
+.menu-mobile .icon-mobilem{width: 50%;}
+.menu-mobile .episodes-icon{width: 80%;}
+.menu-mobile .emergentes-icon{width: 35%;}
+.active-mob{background: var(--accent)!important;}
+
+
+/*==========================================================================
+  Estilos Footer
+==========================================================================*/
+.footer {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  background:black; 
+  color: var(--quaternary_color);
+  font-weight: 600;
+  z-index: 50;
+  position: fixed;
+  bottom: 0;
+}
+
+.footer .inlineflex80 {
+  height: 40px;
+  width: 80%;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recordatorio{
+  font-size: 10px;
+  text-align: left;
+}
+
+.copy {
+  font-size: 10px;
+  text-align: right;
+}
+/*==========================================================================
+  Estilos Generales Páginas
+==========================================================================*/
+/* Fullscreen main */
+.page-content {
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--secondary_color);
+  position: relative;
+}
+
+/*Background Images*/
+#home_hero{
+  background: url('../img/bg_home.webp') no-repeat center center;
+  background-size: 100%;
+}
+.simple{
+  background: url('../img/bg_simple.webp') no-repeat center center;
+  background-size: 100%;
+}
+#emergentes{
+  background: url('../img/bg_emergentes.webp') no-repeat center center;
+  background-size: 100%;
+}
+#escuchanos{
+  background: url('../img/bg_home.webp') no-repeat center center;
+  background-size: 100%;
+}
+
+.double-colum{
+  width: 100%;
+  height: 100vh;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+.double-colum .left{
+  width: 55%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.double-colum .right{
+  width: 45%;
+  height: 100%;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.container-title{
+  background: url("../img/bg_title.webp") no-repeat center center;
+  background-size: 90%;
+  width: 110%;
+  min-height: 300px;
+  height: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.title-pink{
+  color: var(--tertiary_color);
+  font-size: 7rem;
+  font-family: "Rubik Glitch", system-ui;
+  text-transform: uppercase;
+  position: absolute;
+  top: 10px;
+  left: 28%;
+  transform: rotate(-3deg);
+}
+.title-black{
+  color: var(--secondary_color);
+  font-size: 7rem;
+  font-family: "Rubik Glitch", system-ui;
+  text-transform: uppercase;
+  position: absolute;
+  tOP: 43%;
+  left: 23%;
+  transform: rotate(-3deg);
+}
+.container-subtitle{
+  width: 70%;
+  min-height: 150px;
+  height: auto;
+  background: url("../img/mancha_pink_grunge.webp") no-repeat center center;
+  background-size: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.subtitle{
+  transform: rotate(-2deg);
+  line-height: 1;
+  text-align: center;
+  font-family: "Rubik Glitch", system-ui;
+  font-size: 3rem;
+  text-transform: uppercase;
+  color: var(--tertiary_color);
+  text-shadow: 
+    5px 5px 0 white,
+    -5px 5px 0 white,
+    5px -5px 0 white,
+    -5px -5px 0 white;
+}
+.stitle{
+  font-family: "Rubik Glitch", system-ui;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.ssub{
+  text-transform: uppercase;
+  color: var(--tertiary_color);
+  font-weight: 600;
+  font-size: 25px;
+  width: 60%;
+  text-align: center;
+}
+
+.overlay-pages{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: 2;
+  background:black;
+  mix-blend-mode: multiply;
+  opacity: 0.5;
+}
+
+/*==========================================================================
+  Estilos HOME
+==========================================================================*/
+.container-logo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: auto;
+  padding: 30px 0;
+  position: relative;
+}
+.container-logo:hover{
+  cursor: pointer;
+}
+.container-logo:hover #play_hover{
+  opacity: 1;
+}
+.container-logo:hover .badge-play{
+  opacity: 0;
+}
+
+
+.logo_home{
+  width: 80%;
+}
+
+.sub-ladeado{
+  top: -10px;
+  left: 9rem;
+  transform: rotate(-8deg);
+  position: absolute;
+  font-family: "Rubik Glitch", system-ui;
+  font-size: 5rem;
+  text-transform: uppercase;
+  color: var(--tertiary_color);
+  text-shadow: 
+    8px 8px 0 white,
+    -8px 8px 0 white,
+    8px -8px 0 white,
+    -8px -8px 0 white;
+}
+
+.badge-play{
+  position: absolute;
+  bottom: -20px;
+  right: 25%;
+  z-index: 3;
+  opacity: 1;
+}
+
+#play_hover{
+  position: absolute;
+  bottom: -20px;
+  right: 25%;
+  opacity: 0;
+  z-index: 20;
+}
+
+.container-slogan{
+  margin-top: -30px;
+  width: 40%;
+  min-height: 300px;
+  height: auto;
+  background: url("../img/mancha_b1.webp") no-repeat center center;
+  background-size: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.slogan{
+  width: 50%;
+  font-family: "Macondo Swash Caps", cursive;
+  font-size: 28px;
+  line-height: 1;
+  text-align: center;
+  padding-top: 50px;
+}
+.buttons{
+  width:60%;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-container{
+  width: 350px;
+  height:150px;
+  background: url("../img/mancha-pink-btn-left.webp") no-repeat center center;
+  background-size: 90%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.btn-container:hover{
+  cursor: pointer;
+}
+.btn-container:hover .btn-badge-left{
+  opacity: 0;
+}
+.btn-container:hover #speaker_hover{
+  opacity: 1;
+}
+.btn-container:hover .btn-txt{
+  color: var(--secondary_color);
+  transition: color 1s ease;
+}
+
+.btn-badge-left{
+  position: absolute;
+  bottom: 10px;
+  left: -5px;
+  z-index: 3;
+  opacity: 1;
+  width: 35%;
+}
+
+#speaker_hover{
+  position: absolute;
+  bottom: 10px;
+  left: -5px;
+  z-index: 3;
+  opacity: 0;
+  width: 35%;
+}
+.btn-txt{
+  color: var(--primary_color);
+  text-transform: uppercase;
+  font-family: "Rubik Glitch", system-ui;
+  font-size: 25px;
+  width: 50%;
+  line-height: 0.9;
+  text-align: center;
+  margin-left: 2rem;
+  transition: color 1s ease;
+}
+
+.btn-container-right{
+  width: 350px;
+  height:150px;
+  background: url("../img/mancha-pink-btn-right.webp") no-repeat center center;
+  background-size: 90%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.btn-container-right:hover{
+  cursor: pointer;
+}
+.btn-container-right:hover .btn-badge-right{
+  opacity: 0;
+}
+.btn-container-right:hover #cinema_hover{
+  opacity: 1;
+}
+.btn-container-right:hover .btn-txt-right{
+  color: var(--secondary_color);
+  transition: color 1s ease;
+}
+
+.btn-badge-right{
+  position: absolute;
+  bottom: 10px;
+  right: -5px;
+  z-index: 3;
+  opacity: 1;
+  width: 35%;
+}
+
+#cinema_hover{
+  position: absolute;
+  bottom: 10px;
+  right: -5px;
+  z-index: 3;
+  opacity: 0;
+  width: 35%;
+}
+
+.btn-txt-right{
+  color: var(--primary_color);
+  text-transform: uppercase;
+  font-family: "Rubik Glitch", system-ui;
+  font-size: 25px;
+  width: 40%;
+  line-height: 0.9;
+  text-align: center;
+  margin-right: 2rem;
+  transition: color 1s ease;
+}
+
+
+/* Estilos modal video */
+.video-modal {
+  position: fixed;
+  inset: 0;
+  display: none; /* se muestra por JS */
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  font-family: inherit;
+}
+
+.video-modal--visible {
+  display: flex;
+}
+
+.video-modal__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(2px);
+}
+
+.video-modal__panel {
+  position: relative;
+  width: calc(100% - 40px);
+  max-width: 1000px;
+  max-height: calc(100vh - 80px);
+  margin: 20px;
+  z-index: 2;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-modal__wrap {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 ratio */
+}
+
+.video-modal__wrap iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-modal__close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  z-index: 3;
+  background: transparent;
+  color: #fff;
+  border: 0;
+  font-size: 34px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 6px 10px;
+  opacity: 0.95;
+}
+.video-modal__close:focus { outline: 2px solid #fff; border-radius: 6px; }
+
+/*==========================================================================
+  Estilos Episodios
+==========================================================================*/
+/*Background episodes*/
+#one{
+  background: url("../img/episodes/bg_card_one.webp") no-repeat center center;
+  background-size: cover;
+  position: absolute;
+  top: 10%;
+  left: 0;
+  transform: rotate(5deg);
+}
+#two{
+  background: url("../img/episodes/bg_card_two.webp") no-repeat center center;
+  background-size: cover;
+  position: absolute;
+  top: 15%;
+  left: 32%;
+  transform: rotate(-6deg);
+
+}
+#three{
+  background: url("../img/episodes/bg_card_three.webp") no-repeat center center;
+  background-size: cover;
+  position: absolute;
+  bottom: 20%;
+  left: 3%;
+  transform: rotate(3deg);
+}
+#four{
+  background: url("../img/episodes/bg_card_four.webp") no-repeat center center;
+  background-size: cover;
+  position: absolute;
+  bottom: 15%;
+  left: 35%;
+  transform: rotate(7deg);
+}
+
+#episodios .container-slogan{
+  width: 70%;
+}
+
+.tapes_card_one{
+  width: 100%;
+  height: 300px;
+}
+.card-episode{
+  width: 25%;
+  height: 300px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow:10px 5px 5px rgba(0,0,0,0.4);
+  position: relative;
+  cursor: pointer;
+}
+.card-episode:hover .card-episode-hover{
+  opacity: 1;
+  bottom: 0;
+  transition: all 1s ease-in-out;
+}
+.episode-buttons{
+  width: 80%;
+  height: 35px;
+  display: inline-flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: absolute;
+  bottom: 10px;
+  z-index: 50;
+}
+.episode-buttons a{
+  font-size: 30px;
+  color: var(--primary_color);
+  margin: 0 5px;
+  transition: color 1s ease;
+}
+.episode-buttons a:hover{
+  color: var(--tertiary_color);
+  transition: color 1s ease-in-out;
+}
+
+.card-episode-hover{
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 10;
+  border-radius: 10px;
+  opacity: 0;
+  bottom: -100px;
+}
+
+.card-episode-hover .episode-name{
+  font-size: 16px;
+  color: var(--primary_color);
+  width: 80%;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1.3;
+  z-index: 10;
+}
+.card-episode-hover .episode-name span{
+  font-family: "Rubik Glitch", system-ui;
+  font-size: 25px;
+  color: var(--tertiary_color);
+  line-height: .6;
+}
+.overlay-card{
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity:0.8;
+  position: absolute;
+  z-index: 2;
+  border-radius: 10px;
+}
+
+#one .tape-s{
+  position: absolute;
+  z-index: 30;
+  top: -1rem;
+  right:-15px;
+}
+#one .tape-l{
+  position: absolute;
+  z-index: 30;
+  top: -1rem;
+  left:-20px;
+}
+#one .tape-cross{
+  position: absolute;
+  z-index: 30;
+  bottom: -2rem;
+  left:-35px;
+}
+#two .tape-s{
+  position: absolute;
+  z-index: 30;
+  top: -1rem;
+  right:-15px;
+}
+#two .tape-l{
+  position: absolute;
+  z-index: 30;
+  bottom: -1rem;
+  left:-20px;
+  transform: rotate(-120deg);
+}
+#two .tape-cross{
+  position: absolute;
+  z-index: 30;
+  top: -2rem;
+  left:-35px;
+  transform: rotate(-60deg);
+}
+#three .tape-s{
+  position: absolute;
+  z-index: 30;
+  bottom: -1rem;
+  left:-15px;
+}
+#three .tape-l{
+  position: absolute;
+  z-index: 30;
+  top: -1rem;
+  left:-20px;
+}
+#three .tape-cross{
+  position: absolute;
+  z-index: 30;
+  top: -1.5rem;
+  right:-30px;
+  transform: rotate(20deg);
+}
+#four .tape-s{
+  position: absolute;
+  z-index: 30;
+  top: -1rem;
+  left:-15px;
+  transform: rotate(-90deg);
+}
+#four .tape-l{
+  position: absolute;
+  z-index: 30;
+  top: -1rem;
+  right:-20px;
+  transform: rotate(80deg);
+}
+#four .tape-cross{
+  position: absolute;
+  z-index: 30;
+  bottom: -2rem;
+  left:-30px;
+  transform: rotate(20deg);
+}
+
+/*==========================================================================
+  Estilos Crew
+==========================================================================*/
+#karens{
+  background: url("../img/karencitas_image.webp") no-repeat center center;
+  background-size: 100%;
+}
+#nina{
+  background: url("../img/nina.webp") no-repeat center center;
+  background-size: 100%;
+}
+#kaly{
+  background: url("../img/kaly.webp") no-repeat center center;
+  background-size: 100%;
+}
+
+.container-title-name{
+  background: url("../img/white_grunge_mancha.webp") no-repeat center center;
+  background-size:100%;
+  min-height: 300px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height:auto;
+}
+
+.karencitas .title-black{
+  left: 32%;
+  top: 23%;
+  font-size: 8rem;
+}
+
+.karencitas .subtitle{
+  font-size: 2.5rem;
+  width: 70%;
+  text-shadow: 5px 5px 0 white, -5px 5px 0 white, 5px -5px 0 white, -5px -5px 0 white;
+}
+.karencitas .container-subtitle{
+  width: 85%;
+  margin-top: -80px;
+}
+.karencitas .container-slogan{
+  width: 90%;
+  margin-top: 3rem;
+}
+.karencitas .text{
+  margin-top:10px;
+}
+.karencitas .left{
+  justify-content: flex-start;
+}
+
+#crew .title-pink{
+  left: 20%;
+}
+#crew .title-black{
+  left: 15%;
+}
+#crew .container-subtitle{
+  width: 75%;
+}
+#crew .subtitle{
+  width: 90%;
+  font-size: 1.5rem;
+  text-shadow: 3px 3px 0 white, -3px 3px 0 white, 3px -3px 0 white, -3px -3px 0 white;
+}
+#crew .container-slogan{
+  width: 80%;
+}
+.text{
+  width: 48%;
+  text-align: center;
+  font-size:12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.slider{
+  position: relative;
+  overflow: hidden;
+  height: 95vh;
+  width: 100vw;
+  z-index: 650;
+}
+.slide{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform: translateX(100%);
+  transition: transform 0.6s ease, opacity 0.4s ease;
+
+}
+.slide.current{
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 1;
+}
+/* Cuando sale hacia la izquierda o derecha */
+.slide.exit-left {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.slide.exit-right {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+/* Cuando entra desde la izquierda o derecha */
+.slide.enter-left {
+  transform: translateX(-100%);
+  opacity: 1;
+}
+.slide.enter-right {
+  transform: translateX(100%);
+  opacity: 1;
+}
+
+button.next{
+  right: 220px;
+  bottom: 9rem;
+  position: absolute;
+}
+button.prev{
+  right: 290px;
+  bottom: 9rem;
+  position: absolute;
+}
+.slider_buttons i{
+  font-size: 1.5rem;
+}
+.slider_buttons button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 35px;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 900;
+  background: var(--primary_color);
+  border: 2px solid var(--secondary_color);
+  border-radius: 10px;
+}
+.slider_buttons button:hover{
+  background: var(--tertiary_color);
+}
+/*==========================================================================
+  Estilos Especiales
+==========================================================================*/
+#especiales .container-slogan{
+  width: 90%;
+}
+
+#tradicionesmexas{
+  width: 50%;
+  height: 650px;
+  background: url("../img/episodes/bg_card_tradiciones.webp") no-repeat center center;
+  background-size: cover;
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  transform: rotate(7deg);
+}
+#tradicionesmexas .tape-s{
+  position: absolute;
+  z-index: 30;
+  top:-30px;
+  right:-30px;
+  width: 18%;
+}
+#tradicionesmexas .tape-l{
+  position: absolute;
+  z-index: 30;
+  top: -1rem;
+  left:-20px;
+  width: 18%;
+}
+#tradicionesmexas .tape-cross{
+  position: absolute;
+  z-index: 30;
+  bottom: -2rem;
+  left:-35px;
+  width: 22%;
+}
+
+#tradicionesmexas .badge-play{
+  right: -20px;
+}
+
+.enlacebadge .play_hover{
+  opacity: 1;
+  position: absolute;
+  bottom: -20px;
+  opacity: 0;
+  z-index: 20;
+  right: -20px;
+}
+
+.enlacebadge{
+  position: relative;
+  top: 45%;
+  width: 100%;
+  height: 65px;
+}
+
+.enlacebadge:hover .badge-play{
+  opacity: 0;
+}
+
+.enlacebadge:hover .play_hover{
+  opacity: 1;
+}
+
+/*==========================================================================
+  Estilos Emergentes
+==========================================================================*/
+.flex80{
+  width: 80%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 30;
+}
+
+#emergentes .container-title{
+  width: 70%;
+}
+#emergentes .container-title .title-pink{
+  left: 15%;
+}
+#emergentes .container-subtitle{
+  margin-top: -30px;
+}
+#emergentes .container-slogan{
+  width: 55%;
+}
+#emergentes .text{
+  padding-top: 50px;
+  margin-bottom: 10px;
+}
+.form-link-content{
+  width: 50%;
+  height: 50px;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-link-content .subtitle{
+  margin-right: 10px;
+  font-size: 2rem;
+  transform: rotate(0);
+}
+.form-link-content:hover #form-icon{
+  opacity: 0;
+}
+.form-link-content:hover #form-icon-hover{
+  opacity: 1;
+}
+
+#form-icon-hover{
+  opacity: 0;
+}
+
+.btn-badge{
+  position: absolute;
+  left: -40px;
+}
+.accent{
+  color:  var(--accent);
+  font-size: 14px;
+  font-family: "Rubik Glitch", system-ui;
+}
+
+/*==========================================================================
+  Estilos Escuchanos
+==========================================================================*/
+
+#escuchanos .container-title{
+  width: 70%;
+}
+#escuchanos .container-title .title-pink{
+  left: 30%;
+  font-size: 8rem;
+}
+#escuchanos .container-title .title-black{
+  left: 33%;
+  font-size: 9rem;
+  top: 40%;
+}
+
+#escuchanos .container-slogan{
+  width: 65%;
+}
+#escuchanos .container-slogan .text{
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.social-container{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 200px;
+  background: url("../img/mancha_redes.webp") no-repeat center center;
+  position: relative;
+}
+.red{
+  width: 65px;
+  height: 65px;
+  background: var(--tertiary_color);
+  margin: 0 10px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  position: absolute;
+}
+.red img{
+  position: absolute;
+  right:0;
+  left:-6px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.red:hover .icon-social-hover{
+opacity: 1;
+}
+
+.red .icon-social-hover{
+  opacity: 0;
+  position: absolute;
+}
+#tt{
+  top: 22%;
+  left: 28%;
+  transform: rotate(-7deg);
+}
+#fb{
+  top: 38%;
+  left: 36%;
+  transform: rotate(-5deg);
+}
+#sf{
+  top: 40%;
+  left: 44%;
+  transform: rotate(-3deg);
+}
+#yt{
+  top: 38%;
+  right:40%;
+  transform: rotate(-5deg);
+}
+#ig{
+  top: 22%;
+  right: 32%;
+  transform: rotate(-5deg);
+}
+
+/*==========================================================================
+  Animations
+==========================================================================*/
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; transform: scale(0.95); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+

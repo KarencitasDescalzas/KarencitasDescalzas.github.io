@@ -1,0 +1,258 @@
+/* ============================================================
+DESKTOP FIRST — Estilos base ya están en styles.css
+Solo ajustamos hacia abajo con max-width
+============================================================ */
+
+
+/* ============================================================
+   1439px → Laptops estándar
+   ============================================================ */
+@media (max-width: 1439px) {
+  .menu-mobile{display: none;}
+  .logo {
+    width: 180px;
+  }
+
+  .container-logo .logo_home {
+    width: 380px;
+  }
+
+  .container-slogan .slogan {
+    font-size: 1.8rem;
+    max-width: 900px;
+  }
+
+  .buttons {
+    gap: 40px;
+  }
+  .double-colum {
+    gap: 40px;
+  }
+
+  .left .title-pink,
+  .left .title-black {
+    font-size: 4rem;
+  }
+
+  .subtitle {
+    font-size: 2.4rem;
+  }
+
+  .stitle {
+    font-size: 1.6rem;
+  }
+
+  .ssub {
+    font-size: 1.2rem;
+  }
+
+  .card-episode {
+    transform: scale(0.95);
+  }
+}
+
+
+/* ============================================================
+1200px → Laptops compactos
+============================================================ */
+@media (max-width: 1200px) {
+.footer {position: fixed;bottom:4rem;}
+.footer .copy, .footer .recordatorio{ font-size:0.55rem;}
+.header {position: fixed; bottom:6rem; background-size: 100%;}
+.logo {margin-left: 5rem;width: 15%;}
+nav.menu ul {gap: 10px;}
+.social {margin-right:3rem;}
+.social a i {font-size: 1.3rem;}
+#home_hero, #escuchanos,section, .simple, #emergentes{background-size: cover; height: 100vh; justify-content: flex-start;}
+.double-colum .left{justify-content: flex-start;}
+.container-logo {width: 80%;}
+.container-logo .logo_home {width: 800px;}
+.sub-ladeado {top: 2rem;left: 3rem;transform: rotate(-6deg);font-size: 3rem;text-shadow: 5px 5px 0 white, -5px 5px 0 white, 5px -5px 0 white, -5px -5px 0 white;}
+.container-slogan {margin-top: -25px;width: 60%;min-height: 200px;justify-content: flex-start;}
+.container-slogan .slogan {font-size: 1.5rem;}
+.page-content{justify-content: flex-start; height: 100%;}
+.buttons {gap: 35px;}
+.btn-container, .btn-container-right{ height: 100px;}
+.btn-badge-left,#speaker_hover {top:0.5rem;left: -5px;}
+.btn-badge-right,#cinema_hover {top:0.5rem;right: -5px;}
+.double-colum {gap: 30px;}
+.title-pink, .title-black {font-size:4rem;}
+.title-pink {top:20%;left:25%;}
+.title-black{top:48%;}
+.container-subtitle {width: 100%;min-height: 100px;}
+#episodios .container-slogan {width: 100%;justify-content: center;}
+.card-episode {width: 40%;height: 250px;}
+.card-episode-hover {height: 250px; bottom: -3rem;}
+.card-episode-hover .episode-name{font-size: 0.65rem;line-height: 1.4;}
+#four{bottom:22%; left:50%;}
+#one{top:5%;}
+#two{top: 8%;left: 50%;}
+#three{bottom: 25%;}
+#crew .subtitle {width: 100%;}
+#crew .container-slogan {width: 100%; justify-content: center;}
+.text {width:70%;font-size:0.65rem;}
+button.prev {right:10%;bottom:10rem;}
+button.next {right:4%;bottom: 10rem;}
+.karencitas .title-black {left: 30%!important;top:35%!important;}
+#especiales .container-subtitle{width: 90%;}
+#especiales .container-slogan {width: 100%; justify-content: center;}
+#especiales .text{width: 85%;}
+#tradicionesmexas {width: 65%;height: 450px;top:10%;left:20%;}
+#emergentes .container-slogan {width:80%; min-height: 250px;}
+#emergentes .btn-badge {left:-4.5rem;}
+#escuchanos .container-title {width: 100%; min-height: 250px;}
+#escuchanos .container-title .title-pink {top:-1rem;font-size: 7rem;}
+#escuchanos .container-title .title-black {left: 30%;font-size: 8rem;top:35%;}
+.flex80{justify-content: flex-start;}
+#tt {left:15%;}
+#fb{left:30%;}
+#yt{right:28%;}
+#ig{right:15%;}
+#escuchanos .container-slogan {width:80%; justify-content: center;}
+#escuchanos .social-container {width: 100%;height: 100px;}
+}
+
+
+
+/* ============================================================
+900px → Tablets verticales
+============================================================ */
+@media (max-width: 900px) {
+#home_hero, #escuchanos{background: url('../img/bg_mobile.webp') no-repeat top center !important;background-size: cover !important;}
+.header{bottom: 5.5rem;}
+.simple{background-size: cover;justify-content: flex-start;}
+.logo{margin-left: 0;}
+.social{margin-right: 0;}
+.container-logo {width: 100%; padding-top: 5rem;}
+.logo_home {width: 260px;}
+.page-content{justify-content:flex-start;}
+.sub-ladeado {top: 5rem;left: 3rem;}
+.badge-play, #play_hover {width: 150px;bottom:-3rem; right:20%;}
+.container-slogan{width: 80%; justify-content: center;}
+.container-slogan .slogan {font-size: 1.3rem;}
+.footer{position: fixed;bottom:4rem;}
+.footer .inlineflex80 {width: 90%;text-align: center;}
+.buttons {width: 80%;gap: 55px;}
+.recordatorio {font-size: 1rem;}
+.copy {font-size: 0.85rem;}
+#home_hero .container-slogan{ margin-top:17rem;}
+.double-colum .left{justify-content:center;}
+.flex80{justify-content:center;}
+.left .container-title {margin-bottom:0;min-height: 150px;}
+.left .title-pink,.left .title-black {font-size: 3rem;}
+.left .title-pink{top:10%;left: 25%;}
+.left .title-black{left: 18%;top: 45%;}
+.subtitle {font-size: 1.5rem;}
+.stitle {font-size: 1.3rem;}
+.ssub {font-size: 1rem;}
+.right {gap: 20px;}
+.card-episode, .card-episode-hover {width:150px;height: 200px;}
+.episode-name {font-size: .9rem;}
+#one{top: 25%;}
+#two{top:28%; left:50%; transform: rotate(5deg);}
+#three{left: 0; bottom: 30%;}
+#four{bottom:28%;}
+button.prev {right: 12%;bottom:22rem;}
+button.next {right: 4%;bottom:22rem;}
+.karencitas .left {justify-content:center;}
+.karencitas .title-black {left: 30% !important;top: 40% !important;}
+.karencitas .container-slogan {width: 100%;margin-top:0;}
+#tradicionesmexas {width:70%;height:400px; top:35%;left:15%;}
+#tradicionesmexas .tape-s {top:-3%;right:-5%;}
+#tradicionesmexas .tape-cross{bottom:-3%;left:-9%;}
+#tradicionesmexas .badge-play, #tradicionesmexas .play_hover {right:-4rem;}
+#emergentes .container-title {width: 100%;}
+#emergentes .btn-badge {left:-5rem;}
+#emergentes .container-slogan {width: 100%;}
+#escuchanos .container-title .title-pink {top:2%;left: 20%;}
+#escuchanos .container-title .title-black {left: 23%;top: 33%;}
+#escuchanos .container-slogan {width: 100%;justify-content: center;}
+}
+
+
+/*============================================================
+767px → Móvil grande
+============================================================ */
+@media (max-width: 767px) {
+  body{overflow-y: scroll;}
+  .header {position: fixed;bottom: 0; top:0; margin: 0; width: 100%; padding: 1rem;background: #000000; background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%); }
+  .menu {display: none;}
+  .menu-mobile{display:flex!important;}
+  .logo {width: 150px;}
+  .container-logo{width: 100%;margin-top:20rem; padding: 0;padding-bottom: 50px;}
+  .logo_home {width:100% !important;}
+  .badge-play,#play_hover {width: 30%;bottom: -50px;right: 33%;}
+  .container-slogan{width: 100%!important;background-position: bottom center;background-size: cover;min-height: 200px; padding: 0;margin-top: 0!important;}
+  .slogan{width: 85%; font-size: 1.2rem!important; padding: 0!important; line-height: 1; margin-top: 2.5rem;}
+  .social a i {font-size: 1.3rem;}
+
+  .container-logo p.sub-ladeado {font-size: 1.5rem;top:0;left: 2rem;text-shadow: 3px 3px 0 white, -3px 3px 0 white, 3px -3px 0 white, -3px -3px 0 white;}
+  .buttons {gap: 20px;width: 100%;}
+  .btn-container,
+  .btn-container-right {width: 100%;height: 100px;}
+  .btn-badge-left{width: 25%;bottom: 0;left: 1rem; top: 2rem;}
+  #speaker_hover {width: 25%;bottom: 0;left: 1rem;top:2rem;}
+  .btn-badge-right{width: 25%;bottom: 0;right: 1rem;top: 2rem;}
+  #cinema_hover {width: 25%;bottom: 0;right: 1rem; top: 2rem;}
+  .footer{position: relative!important;height: auto;flex-direction: column; padding: 2rem 0; bottom: 0;}
+  .footer .inlineflex80 {width:80%;display: flex; height: auto;justify-content: center;flex-direction: column;}
+  .recordatorio{width: 100%; text-align: center; font-size:0.7rem; margin-bottom: 20px;}
+  .copy { width: 100%;font-size: 0.7rem;text-align: center;  color: var(--accent);}
+  .double-colum{height: auto; flex-direction: column; gap: 0;}
+  .double-colum .left, .double-colum .right{width:100%; height: auto;}
+  .container-title{width:100%!important;background-size:100%; min-height: 150px;margin-top: 4rem; margin-bottom: 0!important;}
+  .title-pink{left: 20%; top: 10%;}
+  .title-black{left: 14%; top: 45%;}
+  .title-black, .title-pink{ font-size: 3rem !important;}
+  .container-subtitle{width: 100%!important; min-height: 50px;margin-top: 0!important;}
+  .subtitle{font-size: 1.2rem !important;text-shadow: 1.5px 1.5px 0 white, -1.5px 1.5px 0 white, 1.5px -1.5px 0 white, -1.5px -1.5px 0 white!important;}
+  #episodios .container-slogan{width: 100%;}
+  #episodios .stitle{margin-top: 30px;}
+  #episodios .double-colum .right {min-height: 70vh;}
+  .card-episode{width: 160px; height: 250px;transform: rotate(0deg) !important;}
+  .card-episode-hover{height: 250px;}
+  .card-episode-hover .episode-name{font-size:0.6rem; margin-bottom:2rem;}
+  .card-episode-hover .episode-name span {font-size:1.3rem;}
+  #one{left: 2%; top: 0;}
+  #two{ left:50%; top: 0;}
+  #three{left: 2%; top: 50%;}
+  #four{left: 50%; top: 50%;}
+  #crew .title-pink {left: 8%;}
+  #crew .title-black {left:2%; width: 100%;}
+  .karencitas .title-black {top: 12% !important;}
+  .text{width: 70%; font-size:0.6rem;}
+  .text:nth-child(1){margin-top: 2rem;}
+  .slider{min-height: 105vh; height: auto;}
+  .slide{min-height: 100vh; height: auto;}
+  .slide .right{height:50vh;}
+  #karens{background-position: top center;}
+  .overlay-pages{height: auto; min-height: 105vh;}
+  button.prev {right:25%;bottom: 1.5rem;}
+  button.next{right:8%;bottom: 1.5rem;}
+  .container-title-name{width: 100%;min-height: 100px;margin-top: 4rem;}
+  #especiales .right{min-height: 50vh;}
+  #tradicionesmexas {width: 50%;height:300px; top:10px; left: 25%;}
+  #tradicionesmexas .tape-s {top: -5px;right:-10px;}
+  #tradicionesmexas .tape-l {top: -5px;left:-10px;}
+  #tradicionesmexas .tape-cross {bottom: -5px;left:-10px;}
+  #tradicionesmexas .badge-play, #tradicionesmexas .badge-play-hover {right: -20px; bottom: 0;}
+  #emergentes{background-size: cover; background-position: left top;}
+  .flex80{width: 100%;justify-content: flex-start;}
+  #emergentes .container-title .title-pink {left: 10%;}
+  #emergentes .container-title .title-black {left: 20%;}
+  .form-link-content {flex-direction: column;width: 100%;height:auto;position: relative;display:flex;}
+  #form-icon{position: relative;left: 0;}
+  #form-icon-hover{left: 35%;}
+  #escuchanos .container-title .title-pink {top:28%;left:30%;}
+  #escuchanos .container-title .title-black {left:35%;top:45%;}
+  #escuchanos .social-container {width: 100%; flex-wrap: wrap;}
+  #escuchanos .red{position: relative; width: 35px; height: 35px; margin: 0 5px;}
+  #escuchanos .red img{width: 100%;left: 0;}
+  #tt {top:0;left:0;}
+  #fb {top:0;left:0;}
+  #sf {top:0;left:0;}
+  #yt{top:0; right:0;}
+  #ig{top:0;right:0;}
+}
+
+

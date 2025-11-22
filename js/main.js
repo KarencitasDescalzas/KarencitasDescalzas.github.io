@@ -1,134 +1,126 @@
-window.addEventListener("load",  () => {
-        const bar = document.querySelectorAll(".bar");
-        for (let i = 0; i < bar.length; i++) {
-          bar.forEach((item, j) => {
-            // Random move
-            item.style.animationDuration = `${Math.random() * (0.7 - 0.2) + 0.2}s`; // Change the numbers for speed / ( max - min ) + min / ex. ( 0.5 - 0.1 ) + 0.1
-          });
-        };
-      });
+$(document).ready(function() {
 
-      
-//MENU
-$("#menu_check").click(function() {
-  $('#menu_checkbox').addClass('open');
-  $('#overlay').addClass('open');
+  // Loader (solo en index)
+  if ($("#loader").length) {
+    setTimeout(() => {
+      $("#loader").addClass("hidden");
+    }, 2000);
+  }
+
+
+// Transición entre páginas tipo "slide"
+$("a.nav-link").on("click", function(e) {
+  const link = $(this).attr("href");
+  if (link && !link.includes("#")) {
+    e.preventDefault();
+
+    // Clonar la página actual
+    const clone = $("body").clone();
+    clone.addClass("clone-page").css({
+      position: "fixed",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      overflow: "hidden",
+      zIndex: 0
+    });
+    $("html").append(clone);
+
+    // Elevar la capa actual (la que se moverá)
+    $("body").css("z-index", 1);
+
+    // Animación de salida
+    $("body").addClass("slide-out-left");
+
+    setTimeout(() => {
+      window.location.href = link;
+    }, 600); // igual al transition duration del CSS
+  }
 });
 
-$('.close-menu').click(function() {
- $('#overlay').removeClass('open');
- $('#menu_checkbox').removeClass('open');
-});
+  // 🎬 Reproducir video YouTube al hacer clic en el logo
+  const $logoContainer = $(".container-logo");
+  const $modal = $("#videoModal");
+  const $overlay = $("#videoModalOverlay");
+  const $closeBtn = $("#videoModalClose");
+  const $iframe = $("#youtubePlayer");
 
-AOS.init();
+  if ($logoContainer.length) {
+    const videoId = $logoContainer.data("video") || "_duG8GOUoTw";
 
+    function buildYoutubeEmbedUrl(id) {
+      // autoplay + mute = asegura reproducción automática incluso en móviles
+      return `https://www.youtube.com/embed/${id}?autoplay=1&mute=1&rel=0&modestbranding=1`;
+    }
 
-//SHOW REPRODUCTOR TRAILER
-$("#trailer_button").click(function(){
-  $('.reproductor-container').removeClass('hidden');
-});
+    function openModal() {
+      $iframe.attr("src", buildYoutubeEmbedUrl(videoId));
+      $modal.addClass("video-modal--visible").attr("aria-hidden", "false");
+      $("html, body").css("overflow", "hidden");
+      $closeBtn.focus();
+    }
 
-$("#close").click(function(){
-  $('.reproductor-container').addClass('hidden');
-});
-//reproductor trailer
-$(document).ready(function () {
-  var playing = false,
-    podcasterName = $(".podcaster-name"),
-    trailerName = $(".trailer-name"),
-    time = $(".time"),
-    fillBar = $(".fillBar");
+    function closeModal() {
+      $iframe.attr("src", ""); // Detener el video
+      $modal.removeClass("video-modal--visible").attr("aria-hidden", "true");
+      $("html, body").css("overflow", "");
+      $logoContainer.focus();
+    }
 
-  let audioData = [];
+    $logoContainer.on("click", openModal);
+    $closeBtn.on("click", closeModal);
+    $overlay.on("click", closeModal);
 
-  var song = new Audio();
-  var CurrentSong = 0;
-  window.onload = load();
-
-  function load() {
-    audioData = [
-      {
-        podcaster: "Las Karencitas Descalzas",
-        name: "Bienvenidos al culto",
-        src:
-          "img/trailer_player/trailer-2024.mp3"
+    $(document).on("keydown", function(e) {
+      if (e.key === "Escape" && $modal.hasClass("video-modal--visible")) {
+        closeModal();
       }
-    ];
-
-    podcasterName.html(audioData[CurrentSong].podcaster);
-    trailerName.html(audioData[CurrentSong].name);
-    song.src = audioData[CurrentSong].src;
+    });
   }
 
-  function playSong() {
-    var curSong = audioData[CurrentSong];
-    podcasterName.html(curSong.podcaster);
-    trailerName.html(curSong.name);
-    song.src = curSong.src;
-    song.play();
-    $("#play").addClass("icon-pause_btn");
-    $("#play").removeClass("icon-play_btn");
-    $("img").addClass("active");
-    $(".player-trailer").addClass("active");
-  }
+  // === SLIDER CREW ===
+  let currentSlide = 0;
+  const slides = $(".slide");
+  const totalSlides = slides.length;
 
-  song.addEventListener("timeupdate", function () {
-    var position = (100 / song.duration) * song.currentTime;
-    var current = song.currentTime;
-    var duration = song.duration;
-    var durationMinute = Math.floor(duration / 60);
-    var durationSecond = Math.floor(duration - durationMinute * 60);
-    var durationLabel = durationMinute + ":" + durationSecond;
-    currentSecond = Math.floor(current);
-    currentMinute = Math.floor(currentSecond / 60);
-    currentSecond = currentSecond - currentMinute * 60;
-    // currentSecond = (String(currentSecond).lenght > 1) ? currentSecond : ( String("0") + currentSecond );
-    if (currentSecond < 10) {
-      currentSecond = "0" + currentSecond;
-    }
-    var currentLabel = currentMinute + ":" + currentSecond;
-    var indicatorLabel = currentLabel + " / " + durationLabel;
+  $("#next").on("click", function() {
+    const prevSlide = slides.eq(currentSlide);
+    currentSlide = (currentSlide + 1) % totalSlides;
+    const nextSlide = slides.eq(currentSlide);
 
-    fillBar.css("width", position + "%");
+    prevSlide.removeClass("current").addClass("exit-left");
+    nextSlide.addClass("current enter-right");
 
-    $(".time").html(indicatorLabel);
+    setTimeout(() => {
+      prevSlide.removeClass("exit-left");
+      nextSlide.removeClass("enter-right");
+    }, 600); // igual al CSS transition
   });
 
-  $("#play").click(function playOrPause() {
-    if (song.paused) {
-      song.play();
-      playing = true;
-      $("#play").addClass("icon-pause_btn");
-      $("#play").removeClass("icon-play_btn");
-      $("img").addClass("active");
-    } else {
-      song.pause();
-      playing = false;
-      $("#play").removeClass("icon-pause_btn");
-      $("#play").addClass("icon-play_btn");
-      $("img").removeClass("active");
-    }
+  $("#prev").on("click", function() {
+    const prevSlide = slides.eq(currentSlide);
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    const nextSlide = slides.eq(currentSlide);
+
+    prevSlide.removeClass("current").addClass("exit-right");
+    nextSlide.addClass("current enter-left");
+
+    setTimeout(() => {
+      prevSlide.removeClass("exit-right");
+      nextSlide.removeClass("enter-left");
+    }, 600);
   });
 
-  $('.modal-link').click(function(){
-    $('.modal').show();
+  // === TOGGLE MENU MOBILE ===
+  $(".menu-toggle").on("click", function() {
+    $(this).toggleClass("active");
+    $(".menu-mobile").toggleClass("open");
   });
-  $('.modal .close').click(function(){
-    $('.modal').hide();
-  })
+  // Cerrar menú cuando se selecciona un icono
+  $(".menu-mobile a").on("click", function () {
+    $(".menu-mobile").removeClass("open");
+    $(".menu-toggle").removeClass("active");
+  });
   
-});
-
-
-
-
-//Episodios
-var swiper = new Swiper('.swiper-container', {
-  direction: 'vertical',
-  slidesPerView: 1,
-  mousewheel: true,
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
 });
