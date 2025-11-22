@@ -132,7 +132,7 @@ body.loaded {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 3099;
+  z-index: 1099;
   transition: opacity 0.8s ease, visibility 0.8s;
 }
 
@@ -213,7 +213,7 @@ nav a.active {
   top:5rem; /* Más arriba del menú redondo */
   width: 55px;
   height: 55px;
-  z-index: 2000;
+  z-index:999;
   border: none;
   border-radius: 50%;
   background: var(--tertiary_color);
@@ -262,7 +262,7 @@ nav a.active {
   background: rgba(0,0,0,0.5);
   padding:0;
   position: absolute;
-  z-index: 9999;
+  z-index: 999;
   right: 1rem;
   top:9rem;
   border-radius: 10px; 
