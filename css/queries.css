@@ -8,7 +8,7 @@ Solo ajustamos hacia abajo con max-width
    1439px → Laptops estándar
    ============================================================ */
 @media (max-width: 1439px) {
-  .menu-mobile{display: none;}
+  .menu-mobile, .menu-toggle{display: none;}
   .logo {
     width: 180px;
   }
