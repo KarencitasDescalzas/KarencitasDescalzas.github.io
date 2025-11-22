@@ -177,7 +177,7 @@ button.next {right: 4%;bottom:22rem;}
   body{overflow-y: scroll;}
   .header {position: fixed;bottom: 0; top:0; margin: 0; width: 100%; padding: 1rem;background: #000000; background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%); }
   .menu {display: none;}
-  .menu-mobile{display:flex!important;}
+  .menu-mobile, .menu-toggle{display:flex!important;}
   .logo {width: 150px;}
   .container-logo{width: 100%;margin-top:20rem; padding: 0;padding-bottom: 50px;}
   .logo_home {width:100% !important;}
